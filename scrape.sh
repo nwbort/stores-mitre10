@@ -22,9 +22,11 @@ if [ -z "$JSON_BLOB" ]; then
     exit 1
 fi
 
-# 5. Pipe the extracted JSON blob into jq to parse it and extract the 'markers' array.
-# 6. Save the pretty-printed JSON array output to stores.json.
-echo "$JSON_BLOB" | jq '.[ "*"]["Magento_Ui/js/core/app"].components["store-locator-search"].markers' > stores.json
+# Pipe the extracted JSON blob into jq.
+# The first part navigates to the 'markers' array.
+# The second part (| map(...)) iterates over each store object in the array
+# and deletes the 'calendar' key from within the 'schedule' object.
+echo "$JSON_BLOB" | jq '.[ "*"]["Magento_Ui/js/core/app"].components["store-locator-search"].markers | map(del(.schedule.calendar))' > stores.json
 
 # Check if the file was created and is not empty or just "null".
 if [ ! -s stores.json ] || [ "$(cat stores.json)" = "null" ]; then
@@ -32,4 +34,4 @@ if [ ! -s stores.json ] || [ "$(cat stores.json)" = "null" ]; then
     exit 1
 fi
 
-echo "Successfully extracted store data and saved to stores.json"
+echo "Successfully extracted and cleaned store data, saved to stores.json"

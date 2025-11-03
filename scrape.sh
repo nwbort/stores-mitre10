@@ -9,15 +9,22 @@ URL='https://www.mitre10.com.au/stores'
 
 echo "Scraping store data from $URL"
 
-# 1. Download the HTML page content using curl.
-# 2. Use grep to find the specific script tag line containing the store locator JSON data.
-# 3. Use sed to strip the opening and closing <script> tags, leaving only the raw JSON.
-# 4. Use jq to parse the JSON and extract the 'markers' array, which contains the list of stores.
-# 5. Save the pretty-printed JSON array output to stores.json.
-curl -sL "$URL" \
-  | grep '<script type="text/x-magento-init">.*"store-locator-search".*</script>' \
-  | sed -e 's|<script type="text/x-magento-init">||' -e 's|</script>||' \
-  | jq '.[ "*"]["Magento_Ui/js/core/app"].components["store-locator-search"].markers' > stores.json
+# Use awk to handle the multi-line script tag and isolate the JSON content.
+# 1. Set the Record Separator (RS) to "</script>", treating each script block as a single record.
+# 2. Find the unique record that contains both "store-locator-search" and "x-magento-init".
+# 3. Use the sub() function to remove the opening <script> tag and everything before it.
+# 4. Print the remaining text, which is the clean JSON blob.
+JSON_BLOB=$(curl -sL "$URL" | awk 'BEGIN{RS="</script>"} /"store-locator-search"/ && /x-magento-init/ { sub(/.*<script type="text\/x-magento-init">/,""); print }')
+
+# Check if awk successfully extracted the JSON blob
+if [ -z "$JSON_BLOB" ]; then
+    echo "Error: Could not find the JSON data blob in the HTML source."
+    exit 1
+fi
+
+# 5. Pipe the extracted JSON blob into jq to parse it and extract the 'markers' array.
+# 6. Save the pretty-printed JSON array output to stores.json.
+echo "$JSON_BLOB" | jq '.[ "*"]["Magento_Ui/js/core/app"].components["store-locator-search"].markers' > stores.json
 
 # Check if the file was created and is not empty or just "null".
 if [ ! -s stores.json ] || [ "$(cat stores.json)" = "null" ]; then

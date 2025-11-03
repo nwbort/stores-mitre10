@@ -17,7 +17,7 @@ echo "Scraping store data from $URL"
 curl -sL "$URL" \
   | grep '<script type="text/x-magento-init">.*"store-locator-search".*</script>' \
   | sed -e 's|<script type="text/x-magento-init">||' -e 's|</script>||' \
-  | jq '."*".`"Magento_Ui/js/core/app"`.markers' > stores.json
+  | jq '."*".`"Magento_Ui/js/core/app"`.components."store-locator-search".markers' > stores.json
 
 # Check if the file was created and is not empty or just "null".
 if [ ! -s stores.json ] || [ "$(cat stores.json)" = "null" ]; then

@@ -7127,13 +7127,48 @@
       "timeFormat": "h:mm:ss a zzzz",
       "closingWarningThreshold": 60,
       "openingHours": [
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
+        [
+          {
+            "start_time": "12:00 am",
+            "end_time": "12:00 am"
+          }
+        ],
+        [
+          {
+            "start_time": "7:30 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:30 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:30 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:30 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:30 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "9:00 am",
+            "end_time": "12:00 pm"
+          }
+        ]
       ],
       "specialOpeningHours": []
     },
@@ -12452,7 +12487,7 @@
       "1-9 Barwon Terrace"
     ],
     "url_key": "geelong-south-fagg-s-mitre-10-784251",
-    "contact_mail": "cbacon@faggsgroup.com.au,accounts@faggs.com.au,south@faggsbelmonttimber.com.au",
+    "contact_mail": "blane@faggsgroup.com.au,jdagg@faggsgroup.com.au",
     "contact_phone": "03 5221 2899",
     "contact_fax": "03 5222 2275",
     "schedule": {
@@ -12515,7 +12550,7 @@
     "trade_store": "1",
     "garden_store": "1",
     "colour_center_store": "1",
-    "tradie_discount_store": "1",
+    "tradie_discount_store": "0",
     "trade_plus": 1,
     "regionId": 531,
     "isNew": false,
@@ -25931,8 +25966,8 @@
       "openingHours": [
         [
           {
-            "start_time": "9:30 am",
-            "end_time": "1:30 pm"
+            "start_time": "10:00 am",
+            "end_time": "12:00 pm"
           }
         ],
         [
@@ -35930,7 +35965,7 @@
       "365 Grubb Road"
     ],
     "url_key": "wallington-fagg-s-mitre-10-784049",
-    "contact_mail": "blane@faggsgroup.com.au,wallingtonstoreroom@faggsbelmonttimber.com.au,accounts.faggs@faggsbelmonttimber.com.au",
+    "contact_mail": "cbacon@faggsgroup.com.au",
     "contact_phone": "03 5250 2855",
     "contact_fax": "03 5250 3208",
     "schedule": {
@@ -35993,7 +36028,7 @@
     "trade_store": "1",
     "garden_store": "1",
     "colour_center_store": "1",
-    "tradie_discount_store": "1",
+    "tradie_discount_store": "0",
     "trade_plus": 1,
     "regionId": 531,
     "isNew": false,
@@ -37397,8 +37432,8 @@
       "openingHours": [
         [
           {
-            "start_time": "9:00 am",
-            "end_time": "3:00 pm"
+            "start_time": "12:00 am",
+            "end_time": "12:00 am"
           }
         ],
         [

@@ -7099,12 +7099,12 @@
   },
   {
     "id": "4642",
-    "latitude": -33.837272,
-    "longitude": 138.535454,
+    "latitude": -33.837295,
+    "longitude": 138.616957,
     "name": "CLARE - Pink's Mitre 10 Trade Centre",
     "address": "1 Archer Place, CLARE, South Australia 5453, Australia",
     "url": "https://www.mitre10.com.au/stores/sa/clare-pink-s-mitre-10-trade-centre-870881",
-    "directionUrl": "https://www.google.com/maps/dir//-33.837272,138.535454",
+    "directionUrl": "https://www.google.com/maps/dir//-33.837295,138.616957",
     "setStoreData": {
       "action": "https://www.mitre10.com.au/storelocator/store/set/",
       "data": {
@@ -19748,12 +19748,12 @@
   },
   {
     "id": "4513",
-    "latitude": -21.143093,
-    "longitude": 149.184974,
+    "latitude": -21.142838,
+    "longitude": 149.18789,
     "name": "MACKAY - Porters Mitre 10 Mackay Trade Centre",
     "address": "19 Carlyle Street, MACKAY, Queensland 4740, Australia",
     "url": "https://www.mitre10.com.au/stores/qld/mackay-porters-mitre-10-mackay-trade-centre-784095",
-    "directionUrl": "https://www.google.com/maps/dir//-21.143093,149.184974",
+    "directionUrl": "https://www.google.com/maps/dir//-21.142838,149.18789",
     "setStoreData": {
       "action": "https://www.mitre10.com.au/storelocator/store/set/",
       "data": {

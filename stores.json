@@ -7118,7 +7118,7 @@
       "1 Archer Place"
     ],
     "url_key": "clare-pink-s-mitre-10-trade-centre-870881",
-    "contact_mail": "gregpink@pinksmitre10.com.au",
+    "contact_mail": "tradeaccounts@pinksmitre10.com.au",
     "contact_phone": "08 8842 1171",
     "contact_fax": "",
     "schedule": {
@@ -9100,29 +9100,29 @@
     "nameFormatted": "Mitchell's Mitre 10"
   },
   {
-    "id": "2482",
-    "latitude": -38.456143,
-    "longitude": 145.237442,
+    "id": "4660",
+    "latitude": 0,
+    "longitude": 0,
     "name": "COWES - Capeview Mitre 10",
-    "address": "220 Settlement Road, COWES, Victoria 3922, Australia",
-    "url": "https://www.mitre10.com.au/stores/vic/cowes-capeview-mitre-10-784253",
-    "directionUrl": "https://www.google.com/maps/dir//-38.456143,145.237442",
+    "address": "220 SETTLEMENT ROAD, COWES, Victoria 3922, Australia",
+    "url": "https://www.mitre10.com.au/stores/vic/cowes-capeview-mitre-10-872879",
+    "directionUrl": "https://www.google.com/maps/dir//0,0",
     "setStoreData": {
       "action": "https://www.mitre10.com.au/storelocator/store/set/",
       "data": {
-        "id": "2482"
+        "id": "4660"
       }
     },
     "image": false,
     "postCode": "3922",
     "city": "COWES",
     "street": [
-      "220 Settlement Road"
+      "220 SETTLEMENT ROAD"
     ],
-    "url_key": "cowes-capeview-mitre-10-784253",
-    "contact_mail": "craig.marinus@mitre10.com.au,Marie.churchill@mitre10.com.au,simon.murphy@mitre10.com.au",
+    "url_key": "cowes-capeview-mitre-10-872879",
+    "contact_mail": "craig.marinus@mitre10.com.au",
     "contact_phone": "03 5952 2288",
-    "contact_fax": "03 5952 5029",
+    "contact_fax": "",
     "schedule": {
       "locale": "en_AU",
       "dateFormat": "YYYY-MM-DD",
@@ -9167,7 +9167,7 @@
         ],
         [
           {
-            "start_time": "8:00 am",
+            "start_time": "9:00 am",
             "end_time": "4:00 pm"
           }
         ]
@@ -9183,10 +9183,10 @@
     "trade_store": "1",
     "garden_store": "1",
     "colour_center_store": "0",
-    "tradie_discount_store": "1",
-    "trade_plus": 1,
+    "tradie_discount_store": "0",
+    "trade_plus": 0,
     "regionId": 531,
-    "isNew": false,
+    "isNew": true,
     "shortName": "COWES ",
     "nameFormatted": "Capeview Mitre 10"
   },
@@ -12487,7 +12487,7 @@
       "1-9 Barwon Terrace"
     ],
     "url_key": "geelong-south-fagg-s-mitre-10-784251",
-    "contact_mail": "blane@faggsgroup.com.au,jdagg@faggsgroup.com.au",
+    "contact_mail": "blane@faggsgroup.com.au,jdagg@faggsgroup.com.au,south@faggsgroup.com.au",
     "contact_phone": "03 5221 2899",
     "contact_fax": "03 5222 2275",
     "schedule": {
@@ -15470,29 +15470,29 @@
     "nameFormatted": "Injune Mitre 10"
   },
   {
-    "id": "2485",
+    "id": "4651",
     "latitude": -38.628299,
     "longitude": 145.715261,
     "name": "INVERLOCH - Capeview Mitre 10",
-    "address": "10 Bass Highway, INVERLOCH, Victoria 3996, Australia",
-    "url": "https://www.mitre10.com.au/stores/vic/inverloch-capeview-mitre-10-784254",
+    "address": "10 BASS HIGHWAY, INVERLOCH, Victoria 3996, Australia",
+    "url": "https://www.mitre10.com.au/stores/vic/inverloch-capeview-mitre-10-872846",
     "directionUrl": "https://www.google.com/maps/dir//-38.628299,145.715261",
     "setStoreData": {
       "action": "https://www.mitre10.com.au/storelocator/store/set/",
       "data": {
-        "id": "2485"
+        "id": "4651"
       }
     },
     "image": false,
     "postCode": "3996",
     "city": "INVERLOCH",
     "street": [
-      "10 Bass Highway"
+      "10 BASS HIGHWAY"
     ],
-    "url_key": "inverloch-capeview-mitre-10-784254",
-    "contact_mail": "tim.reardon@mitre10.com.au,marie.churchill@mitre10.com.au",
+    "url_key": "inverloch-capeview-mitre-10-872846",
+    "contact_mail": "paul.jones@mitre10.com.au",
     "contact_phone": "03 5674 2907",
-    "contact_fax": "03 5674 2806",
+    "contact_fax": "",
     "schedule": {
       "locale": "en_AU",
       "dateFormat": "YYYY-MM-DD",
@@ -15520,7 +15520,7 @@
         [
           {
             "start_time": "7:00 am",
-            "end_time": "5:00 pm"
+            "end_time": "3:00 pm"
           }
         ],
         [
@@ -15553,10 +15553,10 @@
     "trade_store": "1",
     "garden_store": "1",
     "colour_center_store": "1",
-    "tradie_discount_store": "1",
-    "trade_plus": 1,
+    "tradie_discount_store": "0",
+    "trade_plus": 0,
     "regionId": 531,
-    "isNew": false,
+    "isNew": true,
     "shortName": "INVERLOCH ",
     "nameFormatted": "Capeview Mitre 10"
   },
@@ -19019,29 +19019,29 @@
     "nameFormatted": "Leeton Mitre 10"
   },
   {
-    "id": "2488",
+    "id": "4654",
     "latitude": -38.466115,
     "longitude": 145.95965,
     "name": "LEONGATHA - Capeview Mitre 10",
-    "address": "Lot 2 Cusack Road, LEONGATHA, Victoria 3953, Australia",
-    "url": "https://www.mitre10.com.au/stores/vic/leongatha-capeview-mitre-10-784255",
+    "address": "2 CUSACK ROAD, LEONGATHA, Victoria 3953, Australia",
+    "url": "https://www.mitre10.com.au/stores/vic/leongatha-capeview-mitre-10-872853",
     "directionUrl": "https://www.google.com/maps/dir//-38.466115,145.95965",
     "setStoreData": {
       "action": "https://www.mitre10.com.au/storelocator/store/set/",
       "data": {
-        "id": "2488"
+        "id": "4654"
       }
     },
     "image": false,
     "postCode": "3953",
     "city": "LEONGATHA",
     "street": [
-      "Lot 2 Cusack Road"
+      "2 CUSACK ROAD"
     ],
-    "url_key": "leongatha-capeview-mitre-10-784255",
-    "contact_mail": "Marie.churchill@mitre10.com.au,rhi.lukey@mitre10.com.au",
+    "url_key": "leongatha-capeview-mitre-10-872853",
+    "contact_mail": "dani.blackney@mitre10.com.au",
     "contact_phone": "03 5662 5666",
-    "contact_fax": "03 5662 5667",
+    "contact_fax": "",
     "schedule": {
       "locale": "en_AU",
       "dateFormat": "YYYY-MM-DD",
@@ -19086,7 +19086,7 @@
         ],
         [
           {
-            "start_time": "8:00 am",
+            "start_time": "9:00 am",
             "end_time": "1:00 pm"
           }
         ]
@@ -19103,9 +19103,9 @@
     "garden_store": "1",
     "colour_center_store": "0",
     "tradie_discount_store": "0",
-    "trade_plus": 1,
+    "trade_plus": 0,
     "regionId": 531,
-    "isNew": false,
+    "isNew": true,
     "shortName": "LEONGATHA ",
     "nameFormatted": "Capeview Mitre 10"
   },
@@ -32519,7 +32519,7 @@
         [
           {
             "start_time": "10:00 am",
-            "end_time": "11:30 am"
+            "end_time": "11:45 am"
           }
         ],
         [
@@ -32555,7 +32555,7 @@
         [
           {
             "start_time": "9:00 am",
-            "end_time": "11:30 am"
+            "end_time": "11:45 am"
           }
         ]
       ],
@@ -33397,29 +33397,29 @@
     "nameFormatted": "Wellers Hill True Value Hardware"
   },
   {
-    "id": "2491",
+    "id": "4648",
     "latitude": -38.699439,
     "longitude": 145.867679,
     "name": "TARWIN LOWER - Capeview Mitre 10",
-    "address": "31-33 River Drive, TARWIN LOWER, Victoria 3956, Australia",
-    "url": "https://www.mitre10.com.au/stores/vic/tarwin-lower-capeview-mitre-10-784256",
+    "address": "37 RIVER DRIVE, TARWIN LOWER, Victoria 3956, Australia",
+    "url": "https://www.mitre10.com.au/stores/vic/tarwin-lower-capeview-mitre-10-872838",
     "directionUrl": "https://www.google.com/maps/dir//-38.699439,145.867679",
     "setStoreData": {
       "action": "https://www.mitre10.com.au/storelocator/store/set/",
       "data": {
-        "id": "2491"
+        "id": "4648"
       }
     },
     "image": false,
     "postCode": "3956",
     "city": "TARWIN LOWER",
     "street": [
-      "31-33 River Drive"
+      "37 RIVER DRIVE"
     ],
-    "url_key": "tarwin-lower-capeview-mitre-10-784256",
-    "contact_mail": "Rod.vanderkolk@mitre10.com.au,Marie.churchill@mitre10.com.au,michelle.ford@mitre10.com.au",
+    "url_key": "tarwin-lower-capeview-mitre-10-872838",
+    "contact_mail": "rod.vanderkolk@mitre10.com.au",
     "contact_phone": "03 5663 5445",
-    "contact_fax": "03 5663 5549",
+    "contact_fax": "",
     "schedule": {
       "locale": "en_AU",
       "dateFormat": "YYYY-MM-DD",
@@ -33481,9 +33481,9 @@
     "garden_store": "1",
     "colour_center_store": "0",
     "tradie_discount_store": "0",
-    "trade_plus": 1,
+    "trade_plus": 0,
     "regionId": 531,
-    "isNew": false,
+    "isNew": true,
     "shortName": "TARWIN LOWER ",
     "nameFormatted": "Capeview Mitre 10"
   },
@@ -37583,29 +37583,29 @@
     "nameFormatted": "Wongan Hills Mitre 10"
   },
   {
-    "id": "2479",
+    "id": "4657",
     "latitude": -38.618497,
     "longitude": 145.599918,
     "name": "WONTHAGGI - Capeview Mitre 10",
-    "address": "Cape Paterson Road, WONTHAGGI, Victoria 3995, Australia",
-    "url": "https://www.mitre10.com.au/stores/vic/wonthaggi-capeview-mitre-10-784252",
+    "address": "72-90 BILLSON STREET, WONTHAGGI, Victoria 3995, Australia",
+    "url": "https://www.mitre10.com.au/stores/vic/wonthaggi-capeview-mitre-10-872861",
     "directionUrl": "https://www.google.com/maps/dir//-38.618497,145.599918",
     "setStoreData": {
       "action": "https://www.mitre10.com.au/storelocator/store/set/",
       "data": {
-        "id": "2479"
+        "id": "4657"
       }
     },
     "image": false,
     "postCode": "3995",
     "city": "WONTHAGGI",
     "street": [
-      "Cape Paterson Road"
+      "72-90 BILLSON STREET"
     ],
-    "url_key": "wonthaggi-capeview-mitre-10-784252",
-    "contact_mail": "wonthaggi.manager@cv-m10.com.au,Perry.wylie@mitre10.com.au,accounts@cv-m10.com.au,Marie.churchill@mitre10.com.au",
+    "url_key": "wonthaggi-capeview-mitre-10-872861",
+    "contact_mail": "craig.marinus@mitre10.com.au",
     "contact_phone": "03 5672 3700",
-    "contact_fax": "03 5672 3709",
+    "contact_fax": "",
     "schedule": {
       "locale": "en_AU",
       "dateFormat": "YYYY-MM-DD",
@@ -37621,7 +37621,7 @@
         [
           {
             "start_time": "7:00 am",
-            "end_time": "5:00 pm"
+            "end_time": "4:00 pm"
           }
         ],
         [
@@ -37666,10 +37666,10 @@
     "trade_store": "1",
     "garden_store": "0",
     "colour_center_store": "1",
-    "tradie_discount_store": "1",
-    "trade_plus": 1,
+    "tradie_discount_store": "0",
+    "trade_plus": 0,
     "regionId": 531,
-    "isNew": false,
+    "isNew": true,
     "shortName": "WONTHAGGI ",
     "nameFormatted": "Capeview Mitre 10"
   },

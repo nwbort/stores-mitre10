@@ -18112,9 +18112,9 @@
     "id": "3835",
     "latitude": -37.2427,
     "longitude": 144.457,
-    "name": "KYNETON - Kyneton Home Timber & Hardware",
+    "name": "KYNETON - Kyneton Mitre 10",
     "address": "42 Beauchamp Street, KYNETON, Victoria 3444, Australia",
-    "url": "https://www.mitre10.com.au/stores/vic/kyneton-kyneton-home-timber-hardware-753947",
+    "url": "https://www.mitre10.com.au/stores/vic/kyneton-kyneton-mitre-10-753947",
     "directionUrl": "https://www.google.com/maps/dir//-37.2427,144.457",
     "setStoreData": {
       "action": "https://www.mitre10.com.au/storelocator/store/set/",
@@ -18128,7 +18128,7 @@
     "street": [
       "42 Beauchamp Street"
     ],
-    "url_key": "kyneton-kyneton-home-timber-hardware-753947",
+    "url_key": "kyneton-kyneton-mitre-10-753947",
     "contact_mail": "hardware@kpbs.com.au",
     "contact_phone": "03 5422 1381",
     "contact_fax": "03 5422 6218",
@@ -18197,7 +18197,7 @@
     "regionId": 531,
     "isNew": false,
     "shortName": "KYNETON ",
-    "nameFormatted": "Kyneton Home Timber & Hardware"
+    "nameFormatted": "Kyneton Mitre 10"
   },
   {
     "id": "4362",
@@ -30301,6 +30301,62 @@
     "isNew": false,
     "shortName": "RURAL VIEW ",
     "nameFormatted": "Porters Mitre 10 Northern Beaches Trade Centre"
+  },
+  {
+    "id": "4639",
+    "latitude": -27.652015,
+    "longitude": 153.380568,
+    "name": "RUSSELL ISLAND - Russell Island Mitre 10",
+    "address": "71 High Street, RUSSELL ISLAND, Queensland 4184, Australia",
+    "url": "https://www.mitre10.com.au/stores/qld/russell-island-russell-island-mitre-10-838177",
+    "directionUrl": "https://www.google.com/maps/dir//-27.652015,153.380568",
+    "setStoreData": {
+      "action": "https://www.mitre10.com.au/storelocator/store/set/",
+      "data": {
+        "id": "4639"
+      }
+    },
+    "image": false,
+    "postCode": "4184",
+    "city": "RUSSELL ISLAND",
+    "street": [
+      "71 High Street"
+    ],
+    "url_key": "russell-island-russell-island-mitre-10-838177",
+    "contact_mail": "ribsqld@gmail.com",
+    "contact_phone": "07 3409 1163",
+    "contact_fax": "",
+    "schedule": {
+      "locale": "en_AU",
+      "dateFormat": "YYYY-MM-DD",
+      "timeFormat": "h:mm:ss a zzzz",
+      "closingWarningThreshold": 60,
+      "openingHours": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "specialOpeningHours": []
+    },
+    "closestMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/StorePinLarge_2.png",
+    "defaultMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/Pin_Simple_Mitre_10.svg",
+    "geoDistance": "",
+    "retailerSingleStore": false,
+    "home_store": 0,
+    "mitre10_store": 1,
+    "trade_store": "0",
+    "garden_store": "0",
+    "colour_center_store": "0",
+    "tradie_discount_store": "0",
+    "trade_plus": 0,
+    "regionId": 528,
+    "isNew": true,
+    "shortName": "RUSSELL ISLAND ",
+    "nameFormatted": "Russell Island Mitre 10"
   },
   {
     "id": "3298",

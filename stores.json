@@ -12487,7 +12487,7 @@
       "1-9 Barwon Terrace"
     ],
     "url_key": "geelong-south-fagg-s-mitre-10-784251",
-    "contact_mail": "blane@faggsgroup.com.au,jdagg@faggsgroup.com.au,south@faggsgroup.com.au",
+    "contact_mail": "blane@faggsgroup.com.au,jdagg@faggsgroup.com.au,south@faggsgroup.com.au,accounts@faggsgroup.com.au",
     "contact_phone": "03 5221 2899",
     "contact_fax": "03 5222 2275",
     "schedule": {
@@ -17106,6 +17106,62 @@
     "isNew": false,
     "shortName": "KILCOY ",
     "nameFormatted": "Duffys Mitre 10"
+  },
+  {
+    "id": "4666",
+    "latitude": -37.30747,
+    "longitude": 144.949356,
+    "name": "KILMORE - KILMORE MITRE 10",
+    "address": "115 Powlett Street, KILMORE, Victoria 3764, Australia",
+    "url": "https://www.mitre10.com.au/stores/vic/kilmore-kilmore-mitre-10-6079",
+    "directionUrl": "https://www.google.com/maps/dir//-37.30747,144.949356",
+    "setStoreData": {
+      "action": "https://www.mitre10.com.au/storelocator/store/set/",
+      "data": {
+        "id": "4666"
+      }
+    },
+    "image": false,
+    "postCode": "3764",
+    "city": "KILMORE",
+    "street": [
+      "115 Powlett Street"
+    ],
+    "url_key": "kilmore-kilmore-mitre-10-6079",
+    "contact_mail": "receiving@mitre10kilmore.com.au",
+    "contact_phone": "03 5782 1088",
+    "contact_fax": "",
+    "schedule": {
+      "locale": "en_AU",
+      "dateFormat": "YYYY-MM-DD",
+      "timeFormat": "h:mm:ss a zzzz",
+      "closingWarningThreshold": 60,
+      "openingHours": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "specialOpeningHours": []
+    },
+    "closestMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/StorePinLarge_2.png",
+    "defaultMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/Pin_Simple_Mitre_10.svg",
+    "geoDistance": "",
+    "retailerSingleStore": false,
+    "home_store": 0,
+    "mitre10_store": 1,
+    "trade_store": "0",
+    "garden_store": "0",
+    "colour_center_store": "0",
+    "tradie_discount_store": "0",
+    "trade_plus": 0,
+    "regionId": 531,
+    "isNew": true,
+    "shortName": "KILMORE ",
+    "nameFormatted": "KILMORE MITRE 10"
   },
   {
     "id": "2098",
@@ -35930,7 +35986,7 @@
       "365 Grubb Road"
     ],
     "url_key": "wallington-fagg-s-mitre-10-784049",
-    "contact_mail": "cbacon@faggsgroup.com.au",
+    "contact_mail": "cbacon@faggsgroup.com.au,accounts@faggsgroup.com.au",
     "contact_phone": "03 5250 2855",
     "contact_fax": "03 5250 3208",
     "schedule": {

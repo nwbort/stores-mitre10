@@ -3645,7 +3645,6 @@
     "tds": "0",
     "trade_plus": 0,
     "regionId": 526,
-    "isNew": 1,
     "shortName": "BOMADERRY ",
     "nameFormatted": "Bomaderry Mitre 10"
   },
@@ -7124,28 +7123,28 @@
     "nameFormatted": "Cleve Mitre 10"
   },
   {
-    "id": "2920",
-    "latitude": -27.524681,
-    "longitude": 153.254792,
-    "name": "CLEVELAND - Cleveland Mitre 10  ",
-    "address": "25-31 Shore Street West, CLEVELAND, Queensland 4163, Australia",
-    "url": "stores/qld/cleveland-cleveland-mitre-10-783553",
-    "directionUrl": "https://www.google.com/maps/dir//-27.524681,153.254792",
+    "id": "4678",
+    "latitude": -27.524383,
+    "longitude": 153.254223,
+    "name": "CLEVELAND - CLEVELAND MITRE 10",
+    "address": "25-31 SHORE STREET WEST, CLEVELAND, Queensland 4163, Australia",
+    "url": "stores/qld/cleveland-cleveland-mitre-10-873067",
+    "directionUrl": "https://www.google.com/maps/dir//-27.524383,153.254223",
     "setStoreData": {
       "action": "https://www.mitre10.com.au/storelocator/store/set/",
       "data": {
-        "id": "2920"
+        "id": "4678"
       }
     },
     "postCode": "4163",
     "city": "CLEVELAND",
     "street": [
-      "25-31 Shore Street West"
+      "25-31 SHORE STREET WEST"
     ],
-    "url_key": "cleveland-cleveland-mitre-10-783553",
-    "contact_mail": "clevm10acc@bigpond.com",
+    "url_key": "cleveland-cleveland-mitre-10-873067",
+    "contact_mail": "rob.theunissen@finlayson.com.au",
     "phone": "07 3821 1153",
-    "contact_fax": "07 3821 1229",
+    "contact_fax": "",
     "schedule": {
       "locale": "en_AU",
       "dateFormat": "YYYY-MM-DD",
@@ -7203,14 +7202,15 @@
     "retailerSingleStore": 0,
     "home_store": 0,
     "mitre10_store": 1,
-    "trade_store": "1",
-    "garden_store": "1",
-    "colour_center_store": "1",
+    "trade_store": "0",
+    "garden_store": "0",
+    "colour_center_store": "0",
     "tds": "0",
-    "trade_plus": 1,
+    "trade_plus": 0,
     "regionId": 528,
+    "isNew": 1,
     "shortName": "CLEVELAND ",
-    "nameFormatted": "Cleveland Mitre 10"
+    "nameFormatted": "CLEVELAND MITRE 10"
   },
   {
     "id": "3481",
@@ -9111,13 +9111,48 @@
       "timeFormat": "h:mm:ss a zzzz",
       "closingWarningThreshold": 60,
       "openingHours": [
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
+        [
+          {
+            "start_time": "12:00 am",
+            "end_time": "12:00 am"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "12:00 pm"
+          }
+        ]
       ],
       "specialOpeningHours": []
     },
@@ -9967,13 +10002,48 @@
       "timeFormat": "h:mm:ss a zzzz",
       "closingWarningThreshold": 60,
       "openingHours": [
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
+        [
+          {
+            "start_time": "12:00 am",
+            "end_time": "12:00 am"
+          }
+        ],
+        [
+          {
+            "start_time": "8:30 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:30 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:30 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:30 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "9:00 am",
+            "end_time": "1:00 pm"
+          }
+        ]
       ],
       "specialOpeningHours": []
     },
@@ -21565,7 +21635,7 @@
         [
           {
             "start_time": "12:00 am",
-            "end_time": "5:00 pm"
+            "end_time": "12:00 am"
           }
         ],
         [
@@ -26413,12 +26483,12 @@
       ],
       "specialOpeningHours": []
     },
-    "closestMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/StorePinLarge_2.png",
-    "defaultMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/Pin_Simple_Mitre_10.svg",
+    "closestMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/HTH_Main_Pin_1.png",
+    "defaultMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/Simple_Pin-01.svg",
     "geoDistance": "",
     "retailerSingleStore": 0,
-    "home_store": 0,
-    "mitre10_store": 1,
+    "home_store": 1,
+    "mitre10_store": 0,
     "trade_store": "0",
     "garden_store": "0",
     "colour_center_store": "0",

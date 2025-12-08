@@ -7118,7 +7118,7 @@
     "trade_store": "0",
     "garden_store": "0",
     "colour_center_store": "0",
-    "tds": "1",
+    "tds": "0",
     "trade_plus": 0,
     "regionId": 531,
     "shortName": "CLAYTON ",
@@ -10084,7 +10084,7 @@
       "19-25 Don Road"
     ],
     "url_key": "devonport-becks-mitre-10-690784",
-    "contact_mail": "richard.zerna@mitre10.com.au,7313.manager@mitre10.com.au,janelle.kelly@mitre10.com.au,dean.gibbins@mitre10.com.au,matthew.carter@mitre10.com.au,devonport.kitchens@mitre10.com.au",
+    "contact_mail": "devonport.kitchens@mitre10.com.au",
     "phone": "03 6424 1481",
     "contact_fax": "",
     "schedule": {
@@ -17991,6 +17991,61 @@
     "nameFormatted": "East Kimberley Mitre 10"
   },
   {
+    "id": "4690",
+    "latitude": -32.810558,
+    "longitude": 151.479688,
+    "name": "KURRI KURRI - KURRI KURRI MITRE 10",
+    "address": "45 NORTHCOTE STREET, KURRI KURRI, New South Wales 2327, Australia",
+    "url": "stores/nsw/kurri-kurri-kurri-kurri-mitre-10-872754",
+    "directionUrl": "https://www.google.com/maps/dir//-32.810558,151.479688",
+    "setStoreData": {
+      "action": "https://www.mitre10.com.au/storelocator/store/set/",
+      "data": {
+        "id": "4690"
+      }
+    },
+    "postCode": "2327",
+    "city": "KURRI KURRI",
+    "street": [
+      "45 NORTHCOTE STREET"
+    ],
+    "url_key": "kurri-kurri-kurri-kurri-mitre-10-872754",
+    "contact_mail": "sales@mitre10kurri.com.au",
+    "phone": "04 1335 0196",
+    "contact_fax": "",
+    "schedule": {
+      "locale": "en_AU",
+      "dateFormat": "YYYY-MM-DD",
+      "timeFormat": "h:mm:ss a zzzz",
+      "closingWarningThreshold": 60,
+      "openingHours": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "specialOpeningHours": []
+    },
+    "closestMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/StorePinLarge_2.png",
+    "defaultMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/Pin_Simple_Mitre_10.svg",
+    "geoDistance": "",
+    "retailerSingleStore": 0,
+    "home_store": 0,
+    "mitre10_store": 1,
+    "trade_store": "0",
+    "garden_store": "0",
+    "colour_center_store": "0",
+    "tds": "0",
+    "trade_plus": 0,
+    "regionId": 526,
+    "isNew": 1,
+    "shortName": "KURRI KURRI ",
+    "nameFormatted": "KURRI KURRI MITRE 10"
+  },
+  {
     "id": "3154",
     "latitude": -36.312744,
     "longitude": 145.045105,
@@ -18785,7 +18840,7 @@
     "trade_store": "0",
     "garden_store": "0",
     "colour_center_store": "0",
-    "tds": "1",
+    "tds": "0",
     "trade_plus": 0,
     "regionId": 531,
     "shortName": "LAVERTON NORTH ",
@@ -22918,38 +22973,38 @@
       "openingHours": [
         [
           {
-            "start_time": "10:00 am",
+            "start_time": "9:00 am",
             "end_time": "2:00 pm"
           }
         ],
         [
           {
             "start_time": "8:00 am",
-            "end_time": "5:30 pm"
+            "end_time": "5:00 pm"
           }
         ],
         [
           {
             "start_time": "8:00 am",
-            "end_time": "5:30 pm"
+            "end_time": "5:00 pm"
           }
         ],
         [
           {
             "start_time": "8:00 am",
-            "end_time": "5:30 pm"
+            "end_time": "5:00 pm"
           }
         ],
         [
           {
             "start_time": "8:00 am",
-            "end_time": "5:30 pm"
+            "end_time": "5:00 pm"
           }
         ],
         [
           {
             "start_time": "8:00 am",
-            "end_time": "5:30 pm"
+            "end_time": "5:00 pm"
           }
         ],
         [
@@ -29290,7 +29345,7 @@
     "trade_store": "1",
     "garden_store": "0",
     "colour_center_store": "0",
-    "tds": "1",
+    "tds": "0",
     "trade_plus": 0,
     "regionId": 531,
     "shortName": "RICHMOND ",

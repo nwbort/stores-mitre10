@@ -13024,7 +13024,7 @@
       "15 Weir Street"
     ],
     "url_key": "glen-iris-tait-mitre-10-936856",
-    "contact_mail": "taitsales@mitre10.com.au,lachlan.pollock@mitre10.com.au,steven.smith@mitre10.com.au,Julian.McGuire@mitre10.com.au",
+    "contact_mail": "taitsales@mitre10.com.au,steven.smith@mitre10.com.au,Julian.McGuire@mitre10.com.au",
     "phone": "03 9822 3381",
     "contact_fax": "",
     "schedule": {
@@ -13087,7 +13087,7 @@
     "trade_store": "1",
     "garden_store": "0",
     "colour_center_store": "1",
-    "tds": "1",
+    "tds": "0",
     "trade_plus": 1,
     "regionId": 531,
     "shortName": "GLEN IRIS ",
@@ -27412,9 +27412,9 @@
       "353 Wentworth Avenue"
     ],
     "url_key": "pendle-hill-harper-timber-mitre-10-trade-centre-783914",
-    "contact_mail": "sales@harpertimber.com.au,ged@johnsonbros.com.au,phil@harpertimber.com.au",
+    "contact_mail": "sales@harpertimber.com.au,ged@johnsonbros.com.au,phil@harpertimber.com.au,joana@harpertimber.com.au",
     "phone": "02 9896 1000",
-    "contact_fax": "02 9896 8619",
+    "contact_fax": "",
     "schedule": {
       "locale": "en_AU",
       "dateFormat": "YYYY-MM-DD",
@@ -27475,7 +27475,7 @@
     "trade_store": "1",
     "garden_store": "0",
     "colour_center_store": "0",
-    "tds": "1",
+    "tds": "0",
     "trade_plus": 1,
     "regionId": 526,
     "shortName": "PENDLE HILL ",

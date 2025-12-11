@@ -6680,9 +6680,9 @@
     "id": "4681",
     "latitude": -26.74068,
     "longitude": 150.62386,
-    "name": "CHINCHILLA - KEATING BROS MITRE 10 - RETAIL",
-    "address": "77 HEENEY STREET, CHINCHILLA, Queensland 4413, Australia",
-    "url": "stores/qld/chinchilla-keating-bros-mitre-10-retail-873083",
+    "name": "CHINCHILLA - Keating Bros Mitre 10",
+    "address": "77 Heeney Street, CHINCHILLA, Queensland 4413, Australia",
+    "url": "stores/qld/chinchilla-keating-bros-mitre-10-873083",
     "directionUrl": "https://www.google.com/maps/dir//-26.74068,150.62386",
     "setStoreData": {
       "action": "https://www.mitre10.com.au/storelocator/store/set/",
@@ -6693,9 +6693,9 @@
     "postCode": "4413",
     "city": "CHINCHILLA",
     "street": [
-      "77 HEENEY STREET"
+      "77 Heeney Street"
     ],
-    "url_key": "chinchilla-keating-bros-mitre-10-retail-873083",
+    "url_key": "chinchilla-keating-bros-mitre-10-873083",
     "contact_mail": "retail@keatinghardware.com.au",
     "phone": "07 4662 7084",
     "contact_fax": "",
@@ -6764,16 +6764,16 @@
     "regionId": 528,
     "isNew": 1,
     "shortName": "CHINCHILLA ",
-    "nameFormatted": "KEATING BROS MITRE 10 - RETAIL"
+    "nameFormatted": "Keating Bros Mitre 10"
   },
   {
     "id": "4684",
-    "latitude": -25.678581,
-    "longitude": 149.583899,
-    "name": "CHINCHILLA - KEATING BROS MITRE 10 - TRADE",
-    "address": "15 WARREGO HIGHWAY, CHINCHILLA, Queensland 4413, Australia",
-    "url": "stores/qld/chinchilla-keating-bros-mitre-10-trade-873091",
-    "directionUrl": "https://www.google.com/maps/dir//-25.678581,149.583899",
+    "latitude": -26.743579,
+    "longitude": 150.634261,
+    "name": "CHINCHILLA - Keating Bros Mitre 10 Trade Centre",
+    "address": "15 Warrego Highway, CHINCHILLA, Queensland 4413, Australia",
+    "url": "stores/qld/chinchilla-keating-bros-mitre-10-trade-centre-873091",
+    "directionUrl": "https://www.google.com/maps/dir//-26.743579,150.634261",
     "setStoreData": {
       "action": "https://www.mitre10.com.au/storelocator/store/set/",
       "data": {
@@ -6783,9 +6783,9 @@
     "postCode": "4413",
     "city": "CHINCHILLA",
     "street": [
-      "15 WARREGO HIGHWAY"
+      "15 Warrego Highway"
     ],
-    "url_key": "chinchilla-keating-bros-mitre-10-trade-873091",
+    "url_key": "chinchilla-keating-bros-mitre-10-trade-centre-873091",
     "contact_mail": "accounts@keatinghardware.com.au",
     "phone": "07 4662 7084",
     "contact_fax": "",
@@ -6854,7 +6854,7 @@
     "regionId": 528,
     "isNew": 1,
     "shortName": "CHINCHILLA ",
-    "nameFormatted": "KEATING BROS MITRE 10 - TRADE"
+    "nameFormatted": "Keating Bros Mitre 10 Trade Centre"
   },
   {
     "id": "2311",
@@ -17030,7 +17030,7 @@
       "115 Powlett Street"
     ],
     "url_key": "kilmore-kilmore-mitre-10-873075",
-    "contact_mail": "receiving@mitre10kilmore.com.au",
+    "contact_mail": "kilmore@crameri.com.au",
     "phone": "03 5782 1088",
     "contact_fax": "",
     "schedule": {

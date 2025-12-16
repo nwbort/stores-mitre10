@@ -18509,7 +18509,7 @@
       "110-114 Gilbert Street"
     ],
     "url_key": "latrobe-wells-mitre-10-829150",
-    "contact_mail": "7319.purchasing@mitre10.com.au",
+    "contact_mail": "7319.manager@mitre10.com.au",
     "phone": "03 6426 2707",
     "contact_fax": "",
     "schedule": {
@@ -18572,7 +18572,7 @@
     "trade_store": "1",
     "garden_store": "1",
     "colour_center_store": "0",
-    "tds": "1",
+    "tds": "0",
     "trade_plus": 0,
     "regionId": 530,
     "shortName": "LATROBE ",

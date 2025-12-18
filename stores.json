@@ -1188,7 +1188,7 @@
         [
           {
             "start_time": "9:00 am",
-            "end_time": "5:00 pm"
+            "end_time": "4:00 pm"
           }
         ],
         [
@@ -3857,7 +3857,7 @@
       "openingHours": [
         [
           {
-            "start_time": "8:00 am",
+            "start_time": "9:00 am",
             "end_time": "4:00 pm"
           }
         ],
@@ -3876,7 +3876,7 @@
         [
           {
             "start_time": "7:30 am",
-            "end_time": "5:30 pm"
+            "end_time": "4:00 pm"
           }
         ],
         [
@@ -3893,8 +3893,8 @@
         ],
         [
           {
-            "start_time": "8:00 am",
-            "end_time": "5:00 pm"
+            "start_time": "9:00 am",
+            "end_time": "4:00 pm"
           }
         ]
       ],
@@ -12061,31 +12061,31 @@
         ],
         [
           {
-            "start_time": "8:00 am",
+            "start_time": "7:30 am",
             "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "8:00 am",
+            "start_time": "7:30 am",
             "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "8:00 am",
+            "start_time": "7:30 am",
             "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "8:00 am",
+            "start_time": "7:30 am",
             "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "8:00 am",
+            "start_time": "7:30 am",
             "end_time": "5:00 pm"
           }
         ],
@@ -17929,13 +17929,48 @@
       "timeFormat": "h:mm:ss a zzzz",
       "closingWarningThreshold": 60,
       "openingHours": [
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
+        [
+          {
+            "start_time": "9:00 am",
+            "end_time": "4:30 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "6:30 am",
+            "end_time": "4:30 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "6:30 am",
+            "end_time": "4:30 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "6:30 am",
+            "end_time": "4:30 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "6:30 am",
+            "end_time": "4:30 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "6:30 am",
+            "end_time": "4:30 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "4:30 pm"
+          }
+        ]
       ],
       "specialOpeningHours": []
     },
@@ -19804,7 +19839,7 @@
         ],
         [
           {
-            "start_time": "8:00 am",
+            "start_time": "8:30 am",
             "end_time": "1:00 pm"
           }
         ]
@@ -23868,31 +23903,31 @@
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "7:30 am",
             "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "7:30 am",
             "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "7:30 am",
             "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "7:30 am",
             "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "7:30 am",
             "end_time": "5:00 pm"
           }
         ],
@@ -33268,6 +33303,61 @@
     "regionId": 526,
     "shortName": "TEA GARDENS ",
     "nameFormatted": "Tea Gardens Home Timber & Hardware"
+  },
+  {
+    "id": "4693",
+    "latitude": -34.44807,
+    "longitude": 147.55277,
+    "name": "TEMORA - MOSES MITRE 10",
+    "address": "1-3 IRONBARK STREET, TEMORA, New South Wales 2666, Australia",
+    "url": "stores/nsw/temora-moses-mitre-10-872770",
+    "directionUrl": "https://www.google.com/maps/dir//-34.44807,147.55277",
+    "setStoreData": {
+      "action": "https://www.mitre10.com.au/storelocator/store/set/",
+      "data": {
+        "id": "4693"
+      }
+    },
+    "postCode": "2666",
+    "city": "TEMORA",
+    "street": [
+      "1-3 IRONBARK STREET"
+    ],
+    "url_key": "temora-moses-mitre-10-872770",
+    "contact_mail": "office@mosesmitre10.com.au",
+    "phone": "02 6977 3100",
+    "contact_fax": "",
+    "schedule": {
+      "locale": "en_AU",
+      "dateFormat": "YYYY-MM-DD",
+      "timeFormat": "h:mm:ss a zzzz",
+      "closingWarningThreshold": 60,
+      "openingHours": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "specialOpeningHours": []
+    },
+    "closestMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/StorePinLarge_2.png",
+    "defaultMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/Pin_Simple_Mitre_10.svg",
+    "geoDistance": "",
+    "retailerSingleStore": 0,
+    "home_store": 0,
+    "mitre10_store": 1,
+    "trade_store": "0",
+    "garden_store": "0",
+    "colour_center_store": "0",
+    "tds": "0",
+    "trade_plus": 0,
+    "regionId": 526,
+    "isNew": 1,
+    "shortName": "TEMORA ",
+    "nameFormatted": "MOSES MITRE 10"
   },
   {
     "id": "4602",

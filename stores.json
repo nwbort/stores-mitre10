@@ -17921,7 +17921,7 @@
     ],
     "url_key": "kurri-kurri-kurri-kurri-mitre-10-872754",
     "contact_mail": "sales@mitre10kurri.com.au",
-    "phone": "04 1335 0196",
+    "phone": "02 49339507",
     "contact_fax": "",
     "schedule": {
       "locale": "en_AU",
@@ -25944,43 +25944,43 @@
       "openingHours": [
         [
           {
-            "start_time": "10:00 am",
-            "end_time": "1:00 pm"
+            "start_time": "9:00 am",
+            "end_time": "4:00 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "8:00 am",
             "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "8:00 am",
             "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "8:00 am",
             "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "8:00 am",
             "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "8:00 am",
             "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "9:00 am",
             "end_time": "4:00 pm"
           }
         ]
@@ -33333,13 +33333,48 @@
       "timeFormat": "h:mm:ss a zzzz",
       "closingWarningThreshold": 60,
       "openingHours": [
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
+        [
+          {
+            "start_time": "9:00 am",
+            "end_time": "3:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "9:00 am",
+            "end_time": "5:00 pm"
+          }
+        ]
       ],
       "specialOpeningHours": []
     },

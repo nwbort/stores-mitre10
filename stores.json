@@ -3863,32 +3863,32 @@
         ],
         [
           {
-            "start_time": "7:30 am",
-            "end_time": "5:30 pm"
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "7:30 am",
-            "end_time": "5:30 pm"
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "7:30 am",
+            "start_time": "8:00 am",
             "end_time": "4:00 pm"
           }
         ],
         [
           {
-            "start_time": "7:30 am",
-            "end_time": "5:30 pm"
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "7:30 am",
-            "end_time": "5:30 pm"
+            "start_time": "8:00 am",
+            "end_time": "5:00 pm"
           }
         ],
         [
@@ -9282,7 +9282,7 @@
       "13 Johnston Street"
     ],
     "url_key": "dalwallinu-mitre-10-dalwallinu-873109",
-    "contact_mail": "chalise@irural.net.au",
+    "contact_mail": "dalwallinu@irural.net.au",
     "phone": "08 9961 1080",
     "contact_fax": "",
     "schedule": {
@@ -17921,7 +17921,7 @@
     ],
     "url_key": "kurri-kurri-kurri-kurri-mitre-10-872754",
     "contact_mail": "sales@mitre10kurri.com.au",
-    "phone": "02 49339507",
+    "phone": "02 4933 9507",
     "contact_fax": "",
     "schedule": {
       "locale": "en_AU",
@@ -17931,44 +17931,44 @@
       "openingHours": [
         [
           {
-            "start_time": "9:00 am",
-            "end_time": "4:30 pm"
+            "start_time": "8:00 am",
+            "end_time": "1:00 pm"
           }
         ],
         [
           {
-            "start_time": "6:30 am",
-            "end_time": "4:30 pm"
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "6:30 am",
-            "end_time": "4:30 pm"
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "6:30 am",
-            "end_time": "4:30 pm"
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "6:30 am",
-            "end_time": "4:30 pm"
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
           }
         ],
         [
           {
-            "start_time": "6:30 am",
-            "end_time": "4:30 pm"
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
           }
         ],
         [
           {
             "start_time": "8:00 am",
-            "end_time": "4:30 pm"
+            "end_time": "1:00 pm"
           }
         ]
       ],
@@ -22284,7 +22284,7 @@
       "56 George Street"
     ],
     "url_key": "moe-tm-h-mitre-10-936401",
-    "contact_mail": "erna@tmhmoe.com.au,tmhmoe@bigpond.net.au,retail@tmhmoe.com.au",
+    "contact_mail": "tmhmoe@bigpond.net.au,retail@tmhmoe.com.au,",
     "phone": "03 5127 2155",
     "contact_fax": "",
     "schedule": {

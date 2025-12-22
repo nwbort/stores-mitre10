@@ -5929,14 +5929,14 @@
         ],
         [
           {
-            "start_time": "7:30 am",
-            "end_time": "5:00 pm"
+            "start_time": "12:00 am",
+            "end_time": "12:00 am"
           }
         ],
         [
           {
-            "start_time": "7:30 am",
-            "end_time": "5:00 pm"
+            "start_time": "12:00 am",
+            "end_time": "12:00 am"
           }
         ],
         [
@@ -20771,7 +20771,7 @@
       "22 Station Road"
     ],
     "url_key": "margaret-river-m-b-mitre-10-871954",
-    "contact_mail": "paul@shepgroup.com.au",
+    "contact_mail": "paul@shepgroup.com.au,paul.brown@mbsales.net.au",
     "phone": "08 9757 2455",
     "contact_fax": "",
     "schedule": {
@@ -23014,37 +23014,37 @@
         [
           {
             "start_time": "6:30 am",
-            "end_time": "3:30 pm"
+            "end_time": "2:00 pm"
           }
         ],
         [
           {
             "start_time": "6:30 am",
-            "end_time": "3:30 pm"
+            "end_time": "2:00 pm"
           }
         ],
         [
           {
             "start_time": "6:30 am",
-            "end_time": "3:30 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "6:30 am",
-            "end_time": "3:30 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "6:30 am",
-            "end_time": "3:30 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "7:30 am",
             "end_time": "1:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "12:00 am",
+            "end_time": "12:00 am"
+          }
+        ],
+        [
+          {
+            "start_time": "12:00 am",
+            "end_time": "12:00 am"
+          }
+        ],
+        [
+          {
+            "start_time": "12:00 am",
+            "end_time": "12:00 am"
           }
         ]
       ],
@@ -30359,7 +30359,7 @@
     "trade_store": "0",
     "garden_store": "0",
     "colour_center_store": "0",
-    "tds": "1",
+    "tds": "0",
     "trade_plus": 1,
     "regionId": 531,
     "shortName": "RYE ",
@@ -31427,7 +31427,7 @@
     "trade_store": "1",
     "garden_store": "1",
     "colour_center_store": "0",
-    "tds": "1",
+    "tds": "0",
     "trade_plus": 1,
     "regionId": 531,
     "shortName": "SORRENTO ",
@@ -33325,7 +33325,7 @@
     ],
     "url_key": "temora-moses-mitre-10-872770",
     "contact_mail": "office@mosesmitre10.com.au",
-    "phone": "02 6977 3100",
+    "phone": "02 6977 3106",
     "contact_fax": "",
     "schedule": {
       "locale": "en_AU",

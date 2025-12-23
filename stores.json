@@ -33336,43 +33336,43 @@
         [
           {
             "start_time": "9:00 am",
-            "end_time": "3:00 pm"
+            "end_time": "1:00 pm"
           }
         ],
         [
           {
-            "start_time": "8:00 am",
-            "end_time": "5:00 pm"
+            "start_time": "6:30 am",
+            "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:00 am",
-            "end_time": "5:00 pm"
+            "start_time": "6:30 am",
+            "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:00 am",
-            "end_time": "5:00 pm"
+            "start_time": "6:30 am",
+            "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:00 am",
-            "end_time": "5:00 pm"
+            "start_time": "6:30 am",
+            "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:00 am",
-            "end_time": "5:00 pm"
+            "start_time": "6:30 am",
+            "end_time": "5:30 pm"
           }
         ],
         [
           {
             "start_time": "9:00 am",
-            "end_time": "5:00 pm"
+            "end_time": "3:00 pm"
           }
         ]
       ],
@@ -36176,7 +36176,7 @@
     "url_key": "warrnambool-pontings-mitre-10-858514",
     "contact_mail": "hardware@pontingbros.com.au,miranda@pontingbros.com.au,info@pontingbros.com.au,ashley@pontingbros.com.au",
     "phone": "03 5561 8900",
-    "contact_fax": "",
+    "contact_fax": "03 5561 8937",
     "schedule": {
       "locale": "en_AU",
       "dateFormat": "YYYY-MM-DD",
@@ -36204,19 +36204,19 @@
         [
           {
             "start_time": "7:30 am",
-            "end_time": "5:30 pm"
+            "end_time": "4:00 pm"
           }
         ],
         [
           {
-            "start_time": "7:30 am",
-            "end_time": "5:30 pm"
+            "start_time": "12:00 am",
+            "end_time": "12:00 am"
           }
         ],
         [
           {
-            "start_time": "7:30 am",
-            "end_time": "5:30 pm"
+            "start_time": "12:00 am",
+            "end_time": "12:00 am"
           }
         ],
         [

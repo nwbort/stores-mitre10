@@ -20770,7 +20770,7 @@
       "22 Station Road"
     ],
     "url_key": "margaret-river-m-b-mitre-10-871954",
-    "contact_mail": "paul@shepgroup.com.au,paul.brown@mbsales.net.au",
+    "contact_mail": "paul.brown@mbsales.net.au",
     "phone": "08 9757 2455",
     "contact_fax": "",
     "schedule": {
@@ -22880,7 +22880,7 @@
     "trade_store": "1",
     "garden_store": "0",
     "colour_center_store": "0",
-    "tds": "1",
+    "tds": "0",
     "trade_plus": 1,
     "regionId": 530,
     "shortName": "MOONAH ",
@@ -29760,7 +29760,7 @@
       "83 Main St"
     ],
     "url_key": "romsey-romsey-mitre-10-106765",
-    "contact_mail": "nick@romseyhardware.com",
+    "contact_mail": "nick@romseyhardware.com,sales@romseyhardware.com",
     "phone": "03 5429 5955",
     "contact_fax": "",
     "schedule": {
@@ -36203,13 +36203,13 @@
         [
           {
             "start_time": "7:30 am",
-            "end_time": "4:00 pm"
+            "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "12:00 am",
-            "end_time": "12:00 am"
+            "start_time": "7:30 am",
+            "end_time": "5:30 pm"
           }
         ],
         [

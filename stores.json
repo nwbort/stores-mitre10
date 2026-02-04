@@ -28941,6 +28941,96 @@
     "nameFormatted": "Casey's Mitre 10"
   },
   {
+    "id": "4704",
+    "latitude": 0,
+    "longitude": 0,
+    "name": "PROSERPINE - CASEY’S MITRE10 PROSERPINE",
+    "address": "134 Main Street, PROSERPINE, Queensland 4800, Australia",
+    "url": "stores/qld/proserpine-casey-s-mitre10-proserpine-872911",
+    "directionUrl": "https://www.google.com/maps/dir//0,0",
+    "setStoreData": {
+      "action": "https://www.mitre10.com.au/storelocator/store/set/",
+      "data": {
+        "id": "4704"
+      }
+    },
+    "postCode": "4800",
+    "city": "PROSERPINE",
+    "street": [
+      "134 Main Street"
+    ],
+    "url_key": "proserpine-casey-s-mitre10-proserpine-872911",
+    "contact_mail": "admin@whitim.com.au",
+    "phone": "07 4945 5511",
+    "contact_fax": "",
+    "schedule": {
+      "locale": "en_AU",
+      "dateFormat": "YYYY-MM-DD",
+      "timeFormat": "h:mm:ss a zzzz",
+      "closingWarningThreshold": 60,
+      "openingHours": [
+        [
+          {
+            "start_time": "12:00 am",
+            "end_time": "12:00 am"
+          }
+        ],
+        [
+          {
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "8:00 am",
+            "end_time": "1:00 pm"
+          }
+        ]
+      ],
+      "specialOpeningHours": []
+    },
+    "closestMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/StorePinLarge_2.png",
+    "defaultMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/Pin_Simple_Mitre_10.svg",
+    "geoDistance": "",
+    "retailerSingleStore": 0,
+    "home_store": 0,
+    "mitre10_store": 1,
+    "trade_store": "0",
+    "garden_store": "0",
+    "colour_center_store": "0",
+    "tds": "0",
+    "trade_plus": 0,
+    "regionId": 528,
+    "isNew": 1,
+    "shortName": "PROSERPINE ",
+    "nameFormatted": "CASEY’S MITRE10 PROSERPINE"
+  },
+  {
     "id": "3805",
     "latitude": -35.3725,
     "longitude": 149.232,

@@ -7054,7 +7054,7 @@
       "1834 Dandenong Road"
     ],
     "url_key": "clayton-tait-mitre-10-856096",
-    "contact_mail": "philip.milne@mitre10.com.au,Michael.Croft@mitre10.com.au,ben.bell@mitre10.com.au",
+    "contact_mail": "taitclayton@mitre10.com.au,taitclayton@mitre10.com.au,taitclayton@mitre10.com.au",
     "phone": "03 7066 3888",
     "contact_fax": "",
     "schedule": {
@@ -14960,95 +14960,6 @@
     "isNew": 1,
     "shortName": "HUSKISSON ",
     "nameFormatted": "GUBBINS MITRE 10 HUSKISSON"
-  },
-  {
-    "id": "4531",
-    "latitude": -32.448409,
-    "longitude": 118.86004,
-    "name": "HYDEN - DELTA AGRIBUSINESS HYDEN MITRE 10",
-    "address": "18-20 McPherson Street, HYDEN, Western Australia 6359, Australia",
-    "url": "stores/wa/hyden-delta-agribusiness-hyden-mitre-10-870824",
-    "directionUrl": "https://www.google.com/maps/dir//-32.448409,118.86004",
-    "setStoreData": {
-      "action": "https://www.mitre10.com.au/storelocator/store/set/",
-      "data": {
-        "id": "4531"
-      }
-    },
-    "postCode": "6359",
-    "city": "HYDEN",
-    "street": [
-      "18-20 McPherson Street"
-    ],
-    "url_key": "hyden-delta-agribusiness-hyden-mitre-10-870824",
-    "contact_mail": "LC.dejager@deltawa.com.au",
-    "phone": "08 9880 5588",
-    "contact_fax": "",
-    "schedule": {
-      "locale": "en_AU",
-      "dateFormat": "YYYY-MM-DD",
-      "timeFormat": "h:mm:ss a zzzz",
-      "closingWarningThreshold": 60,
-      "openingHours": [
-        [
-          {
-            "start_time": "12:00 am",
-            "end_time": "12:00 am"
-          }
-        ],
-        [
-          {
-            "start_time": "8:00 am",
-            "end_time": "5:30 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "8:00 am",
-            "end_time": "5:30 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "8:00 am",
-            "end_time": "5:30 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "8:00 am",
-            "end_time": "5:30 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "8:00 am",
-            "end_time": "5:30 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "8:00 am",
-            "end_time": "12:00 pm"
-          }
-        ]
-      ],
-      "specialOpeningHours": []
-    },
-    "closestMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/StorePinLarge_2.png",
-    "defaultMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/Pin_Simple_Mitre_10.svg",
-    "geoDistance": "",
-    "retailerSingleStore": 0,
-    "home_store": 0,
-    "mitre10_store": 1,
-    "trade_store": "0",
-    "garden_store": "1",
-    "colour_center_store": "0",
-    "tds": "0",
-    "trade_plus": 0,
-    "regionId": 532,
-    "shortName": "HYDEN ",
-    "nameFormatted": "DELTA AGRIBUSINESS HYDEN MITRE 10"
   },
   {
     "id": "4707",

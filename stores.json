@@ -19187,31 +19187,31 @@
         [
           {
             "start_time": "6:30 am",
-            "end_time": "4:00 pm"
+            "end_time": "4:30 pm"
           }
         ],
         [
           {
             "start_time": "6:30 am",
-            "end_time": "4:00 pm"
+            "end_time": "4:30 pm"
           }
         ],
         [
           {
             "start_time": "6:30 am",
-            "end_time": "4:00 pm"
+            "end_time": "4:30 pm"
           }
         ],
         [
           {
             "start_time": "6:30 am",
-            "end_time": "4:00 pm"
+            "end_time": "4:30 pm"
           }
         ],
         [
           {
             "start_time": "6:30 am",
-            "end_time": "4:00 pm"
+            "end_time": "4:30 pm"
           }
         ],
         [
@@ -28705,7 +28705,7 @@
       "openingHours": [
         [
           {
-            "start_time": "10:00 am",
+            "start_time": "9:00 am",
             "end_time": "2:00 pm"
           }
         ],
@@ -28767,9 +28767,9 @@
     "id": "4704",
     "latitude": -20.40266,
     "longitude": 148.583706,
-    "name": "PROSERPINE - CASEY’S MITRE10 PROSERPINE",
+    "name": "PROSERPINE - CASEYS MITRE10 PROSERPINE",
     "address": "134 Main Street, PROSERPINE, Queensland 4800, Australia",
-    "url": "stores/qld/proserpine-casey-s-mitre10-proserpine-872911",
+    "url": "stores/qld/proserpine-caseys-mitre10-proserpine-872911",
     "directionUrl": "https://www.google.com/maps/dir//-20.40266,148.583706",
     "setStoreData": {
       "action": "https://www.mitre10.com.au/storelocator/store/set/",
@@ -28782,7 +28782,7 @@
     "street": [
       "134 Main Street"
     ],
-    "url_key": "proserpine-casey-s-mitre10-proserpine-872911",
+    "url_key": "proserpine-caseys-mitre10-proserpine-872911",
     "contact_mail": "admin@whitim.com.au",
     "phone": "07 4945 5511",
     "contact_fax": "",
@@ -28851,7 +28851,7 @@
     "regionId": 528,
     "isNew": 1,
     "shortName": "PROSERPINE ",
-    "nameFormatted": "CASEY’S MITRE10 PROSERPINE"
+    "nameFormatted": "CASEYS MITRE10 PROSERPINE"
   },
   {
     "id": "3805",
@@ -33613,31 +33613,31 @@
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "6:30 am",
             "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "6:30 am",
             "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "6:30 am",
             "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "6:30 am",
             "end_time": "5:30 pm"
           }
         ],
         [
           {
-            "start_time": "8:30 am",
+            "start_time": "6:30 am",
             "end_time": "5:30 pm"
           }
         ],

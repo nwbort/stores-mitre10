@@ -20772,7 +20772,7 @@
       "22 Station Road"
     ],
     "url_key": "margaret-river-m-b-mitre-10-871954",
-    "contact_mail": "paul.brown@mbsales.net.au,Erin.kingston@mbsales.net.au,robyn.currie@mbsales.net.au",
+    "contact_mail": "paul.brown@mbsales.net.au,Erin.kingston@mbsales.net.au,robyn.currie@mbsales.net.au,lachlan.hill@mbsales.net.au",
     "phone": "08 9757 2455",
     "contact_fax": "",
     "schedule": {
@@ -30833,7 +30833,7 @@
       "55 Albert Street"
     ],
     "url_key": "sebastopol-g-gay-co-mitre-10-857011",
-    "contact_mail": "accounts@faggsgroup.com.au",
+    "contact_mail": "accounts@faggsgroup.com.au,blane@faggsgroup.com.au",
     "phone": "03 5335 9023",
     "contact_fax": "",
     "schedule": {
@@ -30896,7 +30896,7 @@
     "trade_store": "1",
     "garden_store": "1",
     "colour_center_store": "1",
-    "tds": "1",
+    "tds": "0",
     "trade_plus": 0,
     "regionId": 531,
     "shortName": "SEBASTOPOL ",

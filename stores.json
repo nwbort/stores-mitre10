@@ -7024,7 +7024,7 @@
     "retailerSingleStore": 0,
     "home_store": 0,
     "mitre10_store": 1,
-    "trade_store": "0",
+    "trade_store": "1",
     "garden_store": "0",
     "colour_center_store": "0",
     "tds": "0",
@@ -36869,95 +36869,6 @@
     "regionId": 526,
     "shortName": "WEST GOSFORD ",
     "nameFormatted": "Hudson Mitre 10 Trade Centre"
-  },
-  {
-    "id": "3094",
-    "latitude": -41.1541,
-    "longitude": 146.164,
-    "name": "WEST ULVERSTONE - Ulverstone Home Timber & Hardware",
-    "address": "2-4 Flora Street, WEST ULVERSTONE, Tasmania 7315, Australia",
-    "url": "stores/tas/west-ulverstone-ulverstone-home-timber-hardware-950733",
-    "directionUrl": "https://www.google.com/maps/dir//-41.1541,146.164",
-    "setStoreData": {
-      "action": "https://www.mitre10.com.au/storelocator/store/set/",
-      "data": {
-        "id": "3094"
-      }
-    },
-    "postCode": "7315",
-    "city": "WEST ULVERSTONE",
-    "street": [
-      "2-4 Flora Street"
-    ],
-    "url_key": "west-ulverstone-ulverstone-home-timber-hardware-950733",
-    "contact_mail": "accounts@ubctrade.com.au,joanne@ubctrade.com.au",
-    "phone": "03 6425 5909",
-    "contact_fax": "",
-    "schedule": {
-      "locale": "en_AU",
-      "dateFormat": "YYYY-MM-DD",
-      "timeFormat": "h:mm:ss a zzzz",
-      "closingWarningThreshold": 60,
-      "openingHours": [
-        [
-          {
-            "start_time": "12:00 am",
-            "end_time": "12:00 am"
-          }
-        ],
-        [
-          {
-            "start_time": "7:00 am",
-            "end_time": "5:00 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "7:00 am",
-            "end_time": "5:00 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "7:00 am",
-            "end_time": "5:00 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "7:00 am",
-            "end_time": "5:00 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "7:00 am",
-            "end_time": "5:00 pm"
-          }
-        ],
-        [
-          {
-            "start_time": "8:30 am",
-            "end_time": "12:00 pm"
-          }
-        ]
-      ],
-      "specialOpeningHours": []
-    },
-    "closestMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/HTH_Main_Pin_1.png",
-    "defaultMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/Simple_Pin-01.svg",
-    "geoDistance": "",
-    "retailerSingleStore": 0,
-    "home_store": 1,
-    "mitre10_store": 0,
-    "trade_store": "0",
-    "garden_store": "0",
-    "colour_center_store": "0",
-    "tds": "0",
-    "trade_plus": 0,
-    "regionId": 530,
-    "shortName": "WEST ULVERSTONE ",
-    "nameFormatted": "Ulverstone Home Timber & Hardware"
   },
   {
     "id": "2251",

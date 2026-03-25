@@ -7028,7 +7028,7 @@
     "garden_store": "0",
     "colour_center_store": "0",
     "tds": "0",
-    "trade_plus": 0,
+    "trade_plus": 1,
     "regionId": 529,
     "isNew": 1,
     "shortName": "CLARE ",
@@ -8134,8 +8134,8 @@
       "openingHours": [
         [
           {
-            "start_time": "12:00 am",
-            "end_time": "12:00 am"
+            "start_time": "9:00 am",
+            "end_time": "12:30 pm"
           }
         ],
         [

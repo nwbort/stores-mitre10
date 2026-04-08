@@ -7411,7 +7411,7 @@
       "457 Hoddle Street (Cnr Alexandra Pde)"
     ],
     "url_key": "clifton-hill-provans-mitre-10-865105",
-    "contact_mail": "hardware@provans.com.au,",
+    "contact_mail": "hardware@provans.com.au",
     "phone": "03 9489 8255",
     "contact_fax": "",
     "schedule": {
@@ -14713,7 +14713,7 @@
       "53-59 Main Road"
     ],
     "url_key": "huonville-clennett-s-mitre-10-784567",
-    "contact_mail": "accounts@cm10.com.au,accounts@cm10.com.au,hoffice@cm10.com.au",
+    "contact_mail": "accounts@cm10.com.au,hoffice@cm10.com.au",
     "phone": "03 6264 1255",
     "contact_fax": "03 6264 1202",
     "schedule": {
@@ -14776,7 +14776,7 @@
     "trade_store": "1",
     "garden_store": "1",
     "colour_center_store": "1",
-    "tds": "1",
+    "tds": "0",
     "trade_plus": 1,
     "regionId": 530,
     "shortName": "HUONVILLE ",
@@ -22196,7 +22196,7 @@
       "56 George Street"
     ],
     "url_key": "moe-tm-h-mitre-10-936401",
-    "contact_mail": "tmhmoe@bigpond.net.au,retail@tmhmoe.com.au,",
+    "contact_mail": "tmhmoe@bigpond.net.au,retail@tmhmoe.com.au",
     "phone": "03 5127 2155",
     "contact_fax": "",
     "schedule": {
@@ -28160,7 +28160,7 @@
       "Cnr Brickyard & Port Elliot Rd"
     ],
     "url_key": "port-elliot-timco-mitre-10-784424",
-    "contact_mail": "adminsc@timcotimber.com.au,,goodsinwards@timcotimber.com.au",
+    "contact_mail": "adminsc@timcotimber.com.au,goodsinwards@timcotimber.com.au",
     "phone": "08 8554 2312",
     "contact_fax": "08 8554 2602",
     "schedule": {

@@ -36425,6 +36425,96 @@
     "nameFormatted": "Pontings Mitre 10"
   },
   {
+    "id": "4711",
+    "latitude": -31.45543,
+    "longitude": 152.73037,
+    "name": "WAUCHOPE - WAUCHOPE MITRE 10",
+    "address": "1 CARRINGTON STREET, WAUCHOPE, New South Wales 2446, Australia",
+    "url": "stores/nsw/wauchope-wauchope-mitre-10-872564",
+    "directionUrl": "https://www.google.com/maps/dir//-31.45543,152.73037",
+    "setStoreData": {
+      "action": "https://www.mitre10.com.au/storelocator/store/set/",
+      "data": {
+        "id": "4711"
+      }
+    },
+    "postCode": "2446",
+    "city": "WAUCHOPE",
+    "street": [
+      "1 CARRINGTON STREET"
+    ],
+    "url_key": "wauchope-wauchope-mitre-10-872564",
+    "contact_mail": "mitre10wauchope@outlook.com",
+    "phone": "02 7238 4627",
+    "contact_fax": "",
+    "schedule": {
+      "locale": "en_AU",
+      "dateFormat": "YYYY-MM-DD",
+      "timeFormat": "h:mm:ss a zzzz",
+      "closingWarningThreshold": 60,
+      "openingHours": [
+        [
+          {
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
+          }
+        ],
+        [
+          {
+            "start_time": "7:00 am",
+            "end_time": "5:00 pm"
+          }
+        ]
+      ],
+      "specialOpeningHours": []
+    },
+    "closestMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/StorePinLarge_2.png",
+    "defaultMarkerIcon": "https://www.mitre10.com.au/media/smile_map/marker/default/Pin_Simple_Mitre_10.svg",
+    "geoDistance": "",
+    "retailerSingleStore": 0,
+    "home_store": 0,
+    "mitre10_store": 1,
+    "trade_store": "0",
+    "garden_store": "0",
+    "colour_center_store": "0",
+    "tds": "0",
+    "trade_plus": 0,
+    "regionId": 526,
+    "isNew": 1,
+    "shortName": "WAUCHOPE ",
+    "nameFormatted": "WAUCHOPE MITRE 10"
+  },
+  {
     "id": "2623",
     "latitude": -30.225103,
     "longitude": 149.443947,

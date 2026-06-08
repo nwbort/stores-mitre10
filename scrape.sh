@@ -10,11 +10,13 @@ URL='https://www.mitre10.com.au/stores'
 echo "Scraping store data from $URL"
 
 # JavaScript to extract the markers array from the page's Magento init script tags.
-# Works whether the data is present in the initial HTML or rendered after JS runs.
+# Uses double-quotes only so this is safe inside a bash single-quoted string.
 JS_EXTRACT='
 (function() {
-  var scripts = document.querySelectorAll("script[type=\\"text/x-magento-init\\"]");
-  for (var s of scripts) {
+  var allScripts = document.querySelectorAll("script");
+  for (var i = 0; i < allScripts.length; i++) {
+    var s = allScripts[i];
+    if (s.getAttribute("type") !== "text/x-magento-init") continue;
     try {
       var data = JSON.parse(s.textContent);
       var components = data

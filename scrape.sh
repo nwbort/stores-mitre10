@@ -9,43 +9,32 @@ URL='https://www.mitre10.com.au/stores'
 
 echo "Scraping store data from $URL"
 
-# JavaScript to extract the markers array from the page's Magento init script tags.
-# Uses double-quotes only so this is safe inside a bash single-quoted string.
-JS_EXTRACT='
-(function() {
-  var allScripts = document.querySelectorAll("script");
-  for (var i = 0; i < allScripts.length; i++) {
-    var s = allScripts[i];
-    if (s.getAttribute("type") !== "text/x-magento-init") continue;
-    try {
-      var data = JSON.parse(s.textContent);
-      var components = data
-        && data["*"]
-        && data["*"]["Magento_Ui/js/core/app"]
-        && data["*"]["Magento_Ui/js/core/app"].components;
-      if (components
-          && components["store-locator-search"]
-          && components["store-locator-search"].markers) {
-        return components["store-locator-search"].markers;
-      }
-    } catch(e) {}
-  }
-  return null;
-})()
-'
+# Render the page in a real browser to bypass bot-protection challenge pages,
+# then save the full HTML for local parsing and future diagnostics.
+shot-scraper html "$URL" > mitre10.com.au-stores.html
+echo "Rendered HTML saved ($(wc -c < mitre10.com.au-stores.html) bytes)"
 
-# Use shot-scraper to run a real browser (bypasses bot-protection challenge pages)
-# and evaluate the extraction JS after the page finishes loading.
-JSON_BLOB=$(shot-scraper javascript "$URL" "$JS_EXTRACT")
+# Use awk to handle the multi-line script tag and isolate the JSON content.
+# 1. Set the Record Separator (RS) to "</script>", treating each script block as a single record.
+# 2. Find the unique record that contains both "store-locator-search" and "x-magento-init".
+# 3. Use the sub() function to remove the opening <script> tag and everything before it.
+# 4. Print the remaining text, which is the clean JSON blob.
+JSON_BLOB=$(awk 'BEGIN{RS="</script>"} /"store-locator-search"/ && /x-magento-init/ { sub(/.*<script type="text\/x-magento-init">/,""); print }' mitre10.com.au-stores.html)
 
-# Check if extraction succeeded
-if [ -z "$JSON_BLOB" ] || [ "$JSON_BLOB" = "null" ]; then
-    echo "Error: Could not find the JSON data blob in the page."
+# Check if awk successfully extracted the JSON blob
+if [ -z "$JSON_BLOB" ]; then
+    echo "Error: Could not find the JSON data blob in the HTML source."
+    echo "Page title: $(grep -o '<title>[^<]*' mitre10.com.au-stores.html | head -1 || echo 'unknown')"
+    echo "Script tag types found:"
+    grep -o 'type="[^"]*"' mitre10.com.au-stores.html | sort | uniq -c | sort -rn | head -20 || true
     exit 1
 fi
 
-# The markers array is returned directly; strip the schedule.calendar noise.
-echo "$JSON_BLOB" | jq 'map(del(.schedule.calendar))' > stores.json
+# Pipe the extracted JSON blob into jq.
+# The first part navigates to the 'markers' array.
+# The second part (| map(...)) iterates over each store object in the array
+# and deletes the 'calendar' key from within the 'schedule' object.
+echo "$JSON_BLOB" | jq '.[ "*"]["Magento_Ui/js/core/app"].components["store-locator-search"].markers | map(del(.schedule.calendar))' > stores.json
 
 # Check if the file was created and is not empty or just "null".
 if [ ! -s stores.json ] || [ "$(cat stores.json)" = "null" ]; then

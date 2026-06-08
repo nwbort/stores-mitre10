@@ -5,13 +5,12 @@ set -e
 
 echo "Scraping store data from https://www.mitre10.com.au/stores"
 
-# Use Playwright (via scrape.py) to load the page in a real browser,
-# intercept the dynamic AJAX response that contains store markers, and
-# output the raw JSON array.
+# Fetch store data via Playwright (handles session cookies + bot protection).
+# Output is a JSON array of store objects from /storelocatorstate/store/offers.
 python3 scrape.py > /tmp/stores_raw.json
 
-# Strip schedule.calendar noise and write final output.
-jq 'map(del(.schedule.calendar))' /tmp/stores_raw.json > stores.json
+# Remove verbose schedule.calendar noise if present (no-op if key is absent).
+jq 'map(if .schedule then .schedule |= del(.calendar) else . end)' /tmp/stores_raw.json > stores.json
 
 # Sanity check
 if [ ! -s stores.json ] || [ "$(cat stores.json)" = "null" ] || [ "$(cat stores.json)" = "[]" ]; then

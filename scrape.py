@@ -39,32 +39,39 @@ def main():
         browser = p.chromium.launch()
         page = browser.new_page()
 
+        all_json = []  # (url, data) for every JSON response
         captured = []
 
         def on_response(response):
-            if captured:
-                return
             try:
                 ct = response.headers.get("content-type", "")
                 if "json" not in ct or response.status != 200:
                     return
                 data = response.json()
+                all_json.append((response.url, data))
+                print(f"[json] {response.status} {response.url} -> {str(data)[:120]}", file=sys.stderr)
+                if captured:
+                    return
                 # Direct list of stores
                 if looks_like_stores(data):
                     print(f"[intercepted] {response.url}", file=sys.stderr)
                     captured.append(data)
                     return
-                # Wrapped: {"markers": [...]}
+                # Wrapped: {"markers": [...], "stores": [...], etc.}
                 if isinstance(data, dict):
-                    markers = data.get("markers") or data.get("stores") or data.get("retailers")
-                    if looks_like_stores(markers):
-                        print(f"[intercepted] {response.url}", file=sys.stderr)
-                        captured.append(markers)
-            except Exception:
+                    for key in ("markers", "stores", "retailers", "items", "data"):
+                        val = data.get(key)
+                        if looks_like_stores(val):
+                            print(f"[intercepted key={key}] {response.url}", file=sys.stderr)
+                            captured.append(val)
+                            return
+            except Exception as e:
                 pass
 
         page.on("response", on_response)
         page.goto(URL, wait_until="networkidle", timeout=60000)
+        # Extra settle time for lazy-loaded JS modules
+        page.wait_for_timeout(3000)
 
         if captured:
             stores = captured[0]
@@ -79,6 +86,31 @@ def main():
                         var s = cache[key];
                         if (s && Array.isArray(s.markers) && s.markers.length > 10)
                             return s.markers;
+                    }
+                } catch(e) {}
+                return null;
+            }""")
+
+        if not stores:
+            # Try requirejs context: walk defined modules for a markers/stores array
+            stores = page.evaluate("""() => {
+                try {
+                    var ctx = require && require.s && require.s.contexts
+                              && require.s.contexts._ && require.s.contexts._.defined;
+                    if (ctx) {
+                        for (var k in ctx) {
+                            var mod = ctx[k];
+                            if (!mod) continue;
+                            if (Array.isArray(mod) && mod.length > 10
+                                && mod[0] && (mod[0].latitude || mod[0].longitude))
+                                return mod;
+                            if (mod && typeof mod.getList === 'function') {
+                                var list = mod.getList()();
+                                if (Array.isArray(list) && list.length > 10) return list;
+                            }
+                            if (mod && Array.isArray(mod.markers) && mod.markers.length > 10)
+                                return mod.markers;
+                        }
                     }
                 } catch(e) {}
                 return null;
@@ -105,7 +137,11 @@ def main():
         browser.close()
 
         if not stores:
-            print("Error: could not find store markers via any method.", file=sys.stderr)
+            print(f"Error: could not find store markers via any method. "
+                  f"Saw {len(all_json)} JSON responses total.", file=sys.stderr)
+            # Dump localStorage keys for further diagnosis
+            ls_keys = page.evaluate("() => Object.keys(localStorage)")
+            print(f"localStorage keys: {ls_keys}", file=sys.stderr)
             sys.exit(1)
 
         print(json.dumps(stores))

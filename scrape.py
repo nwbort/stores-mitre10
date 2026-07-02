@@ -23,6 +23,12 @@ def main():
         captured = []
 
         def on_response(response):
+            try:
+                ct = response.headers.get("content-type", "")
+                if "json" in ct:
+                    print(f"[json-response] {response.status} {response.url}", file=sys.stderr)
+            except Exception:
+                pass
             if captured:
                 return
             try:
@@ -55,6 +61,12 @@ def main():
             if captured:
                 break
             page.wait_for_timeout(1000)
+
+        if not captured:
+            with open("debug_page.html", "w") as f:
+                f.write(page.content())
+            print(f"[debug] page title: {page.title()}", file=sys.stderr)
+            print("[debug] saved rendered HTML to debug_page.html", file=sys.stderr)
 
         browser.close()
 

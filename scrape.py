@@ -47,6 +47,11 @@ def main():
 
         captured = []
 
+        def on_request(request):
+            if request.resource_type in ("image", "stylesheet", "font", "media"):
+                return
+            print(f"[request] {request.method} {request.url}", file=sys.stderr)
+
         def on_response(response):
             if captured:
                 return
@@ -65,6 +70,7 @@ def main():
             except Exception as e:
                 print(f"[error parsing response] {e}", file=sys.stderr)
 
+        page.on("request", on_request)
         page.on("response", on_response)
 
         try:
@@ -87,6 +93,23 @@ def main():
 
         if not captured:
             print(f"[debug] final page title: {page.title()}", file=sys.stderr)
+            html = page.content()
+            print(f"[debug] page HTML length: {len(html)}", file=sys.stderr)
+            idx = html.lower().find("storelocator")
+            if idx != -1:
+                print(f"[debug] context around 'storelocator': ...{html[max(0, idx-200):idx+200]}...", file=sys.stderr)
+            else:
+                print("[debug] 'storelocator' not found anywhere in page HTML", file=sys.stderr)
+            # Look for likely search/locate buttons or postcode inputs.
+            hints = page.evaluate("""() => {
+                const out = [];
+                document.querySelectorAll('button, input, [role="button"]').forEach(el => {
+                    const t = (el.innerText || el.placeholder || el.getAttribute('aria-label') || '').trim();
+                    if (t) out.push(`${el.tagName}:${t}`);
+                });
+                return out.slice(0, 40);
+            }""")
+            print(f"[debug] buttons/inputs on page: {hints}", file=sys.stderr)
 
         browser.close()
 

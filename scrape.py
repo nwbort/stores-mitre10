@@ -10,7 +10,7 @@ present when the API request fires, and to handle bot-protection pages.
 """
 import json
 import sys
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 URL = "https://www.mitre10.com.au/stores"
 STORE_OFFERS_PATH = "/storelocatorstate/store/offers"
@@ -41,7 +41,20 @@ def main():
                 print(f"[error parsing response] {e}", file=sys.stderr)
 
         page.on("response", on_response)
-        page.goto(URL, wait_until="networkidle", timeout=60000)
+
+        # The page now has persistent background network activity (analytics,
+        # chat widget, etc.) that never lets the network go fully idle, so
+        # "networkidle" hangs until it times out. Wait only for the DOM instead,
+        # then poll for the specific API response we actually need.
+        try:
+            page.goto(URL, wait_until="domcontentloaded", timeout=60000)
+        except PlaywrightTimeoutError as e:
+            print(f"[warning] goto timed out: {e}", file=sys.stderr)
+
+        for _ in range(60):
+            if captured:
+                break
+            page.wait_for_timeout(1000)
 
         browser.close()
 

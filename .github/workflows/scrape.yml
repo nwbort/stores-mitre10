@@ -48,7 +48,7 @@ jobs:
         key: ${{ runner.os }}-browsers
     - name: Install Playwright dependencies
       run: |
-        python3 -m playwright install chromium --with-deps
+        python3 -m patchright install chromium --with-deps
     - name: Run the scraper
       run: |
         ./scrape.sh

@@ -5,8 +5,9 @@ set -e
 
 echo "Scraping store data from https://www.mitre10.com.au/stores"
 
-# Fetch store data via Playwright (handles session cookies + bot protection).
-# Output is a JSON array of store objects from /storelocatorstate/store/offers.
+# Fetch store data via patchright (handles session cookies + Cloudflare bot
+# protection). Output is a JSON array of store objects from
+# /storelocatorstate/store/offers.
 python3 scrape.py > /tmp/stores_raw.json
 
 # Remove verbose schedule.calendar noise if present (no-op if key is absent).

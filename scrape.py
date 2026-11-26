@@ -41,12 +41,26 @@ def main():
                 print(f"[error parsing response] {e}", file=sys.stderr)
 
         page.on("response", on_response)
-        page.goto(URL, wait_until="networkidle", timeout=60000)
+        # Don't wait for "networkidle": analytics/challenge pages poll forever,
+        # which caused Page.goto to time out. Wait for the API response instead.
+        page.goto(URL, wait_until="domcontentloaded", timeout=60000)
 
+        deadline_ms = 60000
+        waited = 0
+        while not captured and waited < deadline_ms:
+            page.wait_for_timeout(1000)
+            waited += 1000
+
+        title = page.title()
         browser.close()
 
         if not captured:
-            print(f"Error: {STORE_OFFERS_PATH} was not called or returned no data.", file=sys.stderr)
+            if "just a moment" in title.lower():
+                print("Error: blocked by a Cloudflare challenge page "
+                      f"(title: {title!r}); store data was not loaded.", file=sys.stderr)
+            else:
+                print(f"Error: {STORE_OFFERS_PATH} was not called or returned no data "
+                      f"(page title: {title!r}).", file=sys.stderr)
             sys.exit(1)
 
         print(json.dumps(captured[0]))

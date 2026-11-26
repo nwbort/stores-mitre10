@@ -10,17 +10,15 @@ The site sits behind a Cloudflare managed challenge, so headless Playwright
 only ever sees the "Just a moment..." interstitial. As in tribunal-tracker,
 we drive a real Chrome (headful, under xvfb-run) via nodriver, load the
 store locator page until the challenge clears, and read the markers from it.
-The markers are read from the HTML exactly as the server sent it (captured
-with the CDP Fetch domain), falling back to the live DOM: after a challenge,
-Magento's scripts have removed the x-magento-init blobs from the DOM by the
-time we can read it.
+After a challenge, Magento's scripts have removed the x-magento-init blobs
+from the live DOM by the time we can read it, so a script injected at
+document start copies the blob somewhere safe first (see STASH_JS).
 (The /storelocatorstate/store/offers API has its own challenge and returns
 403 even from the cleared page, so it isn't used.)
 
 Usage: scrape.py OUTPUT.json   (writes the JSON array of store objects)
 """
 import asyncio
-import base64
 import html as htmllib
 import json
 import os
@@ -82,6 +80,39 @@ CHROME_ARGS = [
     "--window-size=1920,1080",
     "--no-sandbox",  # CI runs as root
 ]
+
+
+# Runs in every new document before the page's own scripts. Magento's scripts
+# remove the x-magento-init blobs from the DOM once they've processed them,
+# which after a Cloudflare challenge happens before we can read the page. So
+# copy the store locator blob, as the parser inserts it, into an inert
+# <script type="application/json"> that nothing else touches. It runs in an
+# isolated world, so the page's own JavaScript can't see it.
+STASH_ID = "m10-scraper-markers"
+STASH_JS = """
+(() => {
+  const ID = "%s";
+  const stash = (el) => {
+    if (document.getElementById(ID)) return;
+    const text = el.textContent || "";
+    if (text.indexOf("store-locator-search") < 0) return;
+    try { JSON.parse(text); } catch (e) { return; }  // not fully parsed yet
+    const copy = document.createElement("script");
+    copy.type = "application/json";
+    copy.id = ID;
+    copy.textContent = text;
+    document.documentElement.appendChild(copy);
+  };
+  const scan = () => document
+    .querySelectorAll('script[type="text/x-magento-init"]').forEach(stash);
+  const observer = new MutationObserver(() => {
+    scan();
+    if (document.getElementById(ID)) observer.disconnect();
+  });
+  observer.observe(document, { childList: true, subtree: true, characterData: true });
+  document.addEventListener("DOMContentLoaded", scan, true);
+})();
+""" % STASH_ID
 
 
 def log(msg: str) -> None:
@@ -172,65 +203,16 @@ async def try_click_turnstile(tab) -> bool:
     return False
 
 
-class DocumentCapture:
-    """Keep the raw HTML of each 200 response for the store locator page.
-
-    The live DOM is what the page's JavaScript has left of the HTML. After a
-    Cloudflare challenge, Magento's scripts have consumed (removed) the
-    x-magento-init blobs by the time we read the DOM, so the markers are gone
-    from it. Intercepting the document response with the CDP Fetch domain gives
-    us the HTML exactly as the server sent it. (Network.getResponseBody doesn't
-    work for this: Chrome doesn't keep the bodies of navigated documents.)"""
-
-    def __init__(self, tab, url_pattern: str):
-        self.tab = tab
-        self.url_pattern = url_pattern
-        self.bodies = []
-
-    async def start(self):
-        fetch = uc.cdp.fetch
-        self.tab.add_handler(fetch.RequestPaused, self._on_paused)
-        pattern = fetch.RequestPattern(
-            url_pattern=self.url_pattern,
-            resource_type=uc.cdp.network.ResourceType.DOCUMENT,
-            request_stage=fetch.RequestStage.RESPONSE,
-        )
-        await with_timeout(self.tab.send(fetch.enable(patterns=[pattern])), "fetch.enable")
-
-    async def _on_paused(self, event):
-        fetch = uc.cdp.fetch
-        try:
-            status = event.response_status_code
-            log(f"  document response: HTTP {status} {event.request.url}")
-            if status == 200:
-                body, is_b64 = await with_timeout(
-                    self.tab.send(fetch.get_response_body(event.request_id)),
-                    "fetch.getResponseBody",
-                )
-                if is_b64:
-                    body = base64.b64decode(body).decode("utf-8", "replace")
-                self.bodies.append(body)
-        except Exception as e:
-            log(f"  could not read raw HTML response: {e}")
-        finally:
-            # Always release the paused response, or the page never loads.
-            try:
-                await self.tab.send(fetch.continue_request(event.request_id))
-            except Exception as e:
-                log(f"  could not continue paused response: {e}")
-
-
 async def load_page(browser, url: str):
     """Load url and wait for the Cloudflare challenge to clear.
     Returns (tab, page HTML), with HTML None if the challenge never cleared."""
     log(f"Navigating to {url}")
     try:
+        # Navigate the existing tab directly. browser.get() re-attaches to the
+        # tab after navigating, which opens a new DevTools session and drops
+        # the STASH_JS registration made on the old one.
         tab = browser.main_tab
-        if getattr(tab, "_capture", None) is None:
-            tab._capture = DocumentCapture(tab, f"{PAGE_URL}*")
-            await tab._capture.start()
-        tab._capture.bodies.clear()
-        await with_timeout(tab.get(url), "tab.get")
+        await with_timeout(tab.send(uc.cdp.page.navigate(url)), "page.navigate")
     except Exception as e:
         log(f"  navigation failed: {e}")
         return None, None
@@ -286,9 +268,12 @@ def _find_markers_anywhere(text: str):
     return None
 
 
+STASH_RE = re.compile(r'<script[^>]*id="%s"[^>]*>(.*?)</script>' % STASH_ID, re.S)
+
+
 def extract_markers(html: str):
     """Return the store-locator-search markers list from the page, or None."""
-    for blob in MAGENTO_INIT_RE.findall(html):
+    for blob in MAGENTO_INIT_RE.findall(html) + STASH_RE.findall(html):
         if '"store-locator-search"' not in blob:
             continue
         try:
@@ -330,15 +315,8 @@ async def wait_for_markers(tab, html: str):
     """Re-read the page until the markers appear or MARKERS_WAIT_SECONDS pass.
     Returns (markers or None, the last HTML read)."""
     deadline = time.time() + MARKERS_WAIT_SECONDS
-    capture = getattr(tab, "_capture", None)
     while True:
         stores = extract_markers(html)
-        if not stores and capture:
-            for raw in reversed(capture.bodies):
-                stores = extract_markers(raw)
-                if stores:
-                    log("  markers read from the raw HTML response")
-                    break
         if stores or time.time() >= deadline:
             return stores, html
         await tab.sleep(2)
@@ -360,6 +338,14 @@ async def scrape(output_path: str) -> int:
 
     browser = await uc.start(host="127.0.0.1", port=port, browser_executable_path=chrome_path)
     try:
+        # Scripts added with addScriptToEvaluateOnNewDocument only run while
+        # the Page domain is enabled.
+        await with_timeout(browser.main_tab.send(uc.cdp.page.enable()), "page.enable")
+        await with_timeout(
+            browser.main_tab.send(uc.cdp.page.add_script_to_evaluate_on_new_document(
+                STASH_JS, world_name="m10-scraper")),
+            "addScriptToEvaluateOnNewDocument",
+        )
         for attempt in range(1, PAGE_ATTEMPTS + 1):
             tab, html = await load_page(browser, PAGE_URL)
             stores = None

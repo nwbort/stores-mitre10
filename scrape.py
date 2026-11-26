@@ -10,12 +10,18 @@ The site sits behind a Cloudflare managed challenge, so headless Playwright
 only ever sees the "Just a moment..." interstitial. As in tribunal-tracker,
 we drive a real Chrome (headful, under xvfb-run) via nodriver, load the
 store locator page until the challenge clears, and read the markers from it.
+The markers are read from the HTML exactly as the server sent it (captured
+with the CDP Fetch domain), falling back to the live DOM: after a challenge,
+Magento's scripts have removed the x-magento-init blobs from the DOM by the
+time we can read it.
 (The /storelocatorstate/store/offers API has its own challenge and returns
 403 even from the cleared page, so it isn't used.)
 
 Usage: scrape.py OUTPUT.json   (writes the JSON array of store objects)
 """
 import asyncio
+import base64
+import html as htmllib
 import json
 import os
 import re
@@ -47,6 +53,10 @@ TURNSTILE_CLICK_INTERVAL = 3
 CDP_CALL_TIMEOUT_SECONDS = 30
 TURNSTILE_FIND_TIMEOUT_SECONDS = 5
 PAGE_ATTEMPTS = 2
+# Once the challenge clears, keep re-reading the page this long for the
+# markers to show up before giving up on the attempt.
+MARKERS_WAIT_SECONDS = 20
+DEBUG_DIR = "debug"
 
 MAGENTO_INIT_RE = re.compile(
     r'<script[^>]*type="text/x-magento-init"[^>]*>(.*?)</script>', re.S
@@ -162,15 +172,68 @@ async def try_click_turnstile(tab) -> bool:
     return False
 
 
+class DocumentCapture:
+    """Keep the raw HTML of each 200 response for the store locator page.
+
+    The live DOM is what the page's JavaScript has left of the HTML. After a
+    Cloudflare challenge, Magento's scripts have consumed (removed) the
+    x-magento-init blobs by the time we read the DOM, so the markers are gone
+    from it. Intercepting the document response with the CDP Fetch domain gives
+    us the HTML exactly as the server sent it. (Network.getResponseBody doesn't
+    work for this: Chrome doesn't keep the bodies of navigated documents.)"""
+
+    def __init__(self, tab, url_pattern: str):
+        self.tab = tab
+        self.url_pattern = url_pattern
+        self.bodies = []
+
+    async def start(self):
+        fetch = uc.cdp.fetch
+        self.tab.add_handler(fetch.RequestPaused, self._on_paused)
+        pattern = fetch.RequestPattern(
+            url_pattern=self.url_pattern,
+            resource_type=uc.cdp.network.ResourceType.DOCUMENT,
+            request_stage=fetch.RequestStage.RESPONSE,
+        )
+        await with_timeout(self.tab.send(fetch.enable(patterns=[pattern])), "fetch.enable")
+
+    async def _on_paused(self, event):
+        fetch = uc.cdp.fetch
+        try:
+            status = event.response_status_code
+            log(f"  document response: HTTP {status} {event.request.url}")
+            if status == 200:
+                body, is_b64 = await with_timeout(
+                    self.tab.send(fetch.get_response_body(event.request_id)),
+                    "fetch.getResponseBody",
+                )
+                if is_b64:
+                    body = base64.b64decode(body).decode("utf-8", "replace")
+                self.bodies.append(body)
+        except Exception as e:
+            log(f"  could not read raw HTML response: {e}")
+        finally:
+            # Always release the paused response, or the page never loads.
+            try:
+                await self.tab.send(fetch.continue_request(event.request_id))
+            except Exception as e:
+                log(f"  could not continue paused response: {e}")
+
+
 async def load_page(browser, url: str):
     """Load url and wait for the Cloudflare challenge to clear.
-    Returns the page HTML, or None if the challenge never cleared."""
+    Returns (tab, page HTML), with HTML None if the challenge never cleared."""
     log(f"Navigating to {url}")
     try:
-        tab = await with_timeout(browser.get(url), "browser.get")
+        tab = browser.main_tab
+        if getattr(tab, "_capture", None) is None:
+            tab._capture = DocumentCapture(tab, f"{PAGE_URL}*")
+            await tab._capture.start()
+        tab._capture.bodies.clear()
+        await with_timeout(tab.get(url), "tab.get")
     except Exception as e:
         log(f"  navigation failed: {e}")
-        return None
+        return None, None
 
     deadline = time.time() + MAX_WAIT_SECONDS
     next_click = time.time() + TURNSTILE_CLICK_INTERVAL
@@ -190,7 +253,7 @@ async def load_page(browser, url: str):
                 log(f"  {len(html)} bytes, title={title!r}")
                 last_title = title
             if not looks_like_challenge(html, title):
-                return html
+                return tab, html
             if time.time() >= next_click:
                 await try_click_turnstile(tab)
                 next_click = time.time() + TURNSTILE_CLICK_INTERVAL
@@ -198,6 +261,28 @@ async def load_page(browser, url: str):
         await tab.sleep(POLL_SECONDS)
 
     log(f"ERROR: Cloudflare challenge did not clear within {MAX_WAIT_SECONDS}s (last title {last_title!r})")
+    return tab, None
+
+
+def _is_store_list(value) -> bool:
+    return (
+        isinstance(value, list)
+        and len(value) > 0
+        and all(isinstance(v, dict) for v in value[:5])
+        and all("latitude" in v and "name" in v for v in value[:5])
+    )
+
+
+def _find_markers_anywhere(text: str):
+    """Find a JSON '"markers": [...]' array anywhere in text."""
+    decoder = json.JSONDecoder()
+    for m in re.finditer(r'"markers"\s*:\s*\[', text):
+        try:
+            value, _ = decoder.raw_decode(text, m.end() - 1)
+        except ValueError:
+            continue
+        if _is_store_list(value):
+            return value
     return None
 
 
@@ -211,7 +296,56 @@ def extract_markers(html: str):
             return data["*"]["Magento_Ui/js/core/app"]["components"]["store-locator-search"]["markers"]
         except (ValueError, KeyError, TypeError) as e:
             log(f"  store-locator-search blob found but not parsed: {e}")
-    return None
+    # Fall back to any markers array in the page: the blob may have moved to
+    # another script, or to an HTML-escaped data-mage-init attribute.
+    markers = _find_markers_anywhere(html)
+    if markers is None and "&quot;markers&quot;" in html:
+        markers = _find_markers_anywhere(htmllib.unescape(html))
+    if markers is not None:
+        log("  markers found outside the store-locator-search init blob")
+    return markers
+
+
+def describe_page(html: str) -> str:
+    """One-line summary of a page, to help debug a missing markers list."""
+    return (
+        f"{len(html)} bytes, {html.count('x-magento-init')} x-magento-init scripts, "
+        f"store-locator-search x{html.count('store-locator-search')}, "
+        f"'markers' x{html.count('markers')}"
+    )
+
+
+def save_debug(html: str, name: str) -> None:
+    try:
+        os.makedirs(DEBUG_DIR, exist_ok=True)
+        path = os.path.join(DEBUG_DIR, name)
+        with open(path, "w") as f:
+            f.write(html)
+        log(f"  saved page to {path}")
+    except OSError as e:
+        log(f"  could not save debug page: {e}")
+
+
+async def wait_for_markers(tab, html: str):
+    """Re-read the page until the markers appear or MARKERS_WAIT_SECONDS pass.
+    Returns (markers or None, the last HTML read)."""
+    deadline = time.time() + MARKERS_WAIT_SECONDS
+    capture = getattr(tab, "_capture", None)
+    while True:
+        stores = extract_markers(html)
+        if not stores and capture:
+            for raw in reversed(capture.bodies):
+                stores = extract_markers(raw)
+                if stores:
+                    log("  markers read from the raw HTML response")
+                    break
+        if stores or time.time() >= deadline:
+            return stores, html
+        await tab.sleep(2)
+        try:
+            html = await with_timeout(tab.get_content(), "tab.get_content")
+        except Exception as e:
+            log(f"  page re-read failed: {e}")
 
 
 async def scrape(output_path: str) -> int:
@@ -227,15 +361,18 @@ async def scrape(output_path: str) -> int:
     browser = await uc.start(host="127.0.0.1", port=port, browser_executable_path=chrome_path)
     try:
         for attempt in range(1, PAGE_ATTEMPTS + 1):
-            html = await load_page(browser, PAGE_URL)
-            stores = extract_markers(html) if html else None
+            tab, html = await load_page(browser, PAGE_URL)
+            stores = None
+            if html:
+                stores, html = await wait_for_markers(tab, html)
             if stores:
                 log(f"Extracted {len(stores)} stores from {PAGE_URL}")
                 with open(output_path, "w") as f:
                     json.dump(stores, f)
                 return 0
             if html:
-                log(f"  attempt {attempt}/{PAGE_ATTEMPTS}: no store-locator-search markers in page")
+                log(f"  attempt {attempt}/{PAGE_ATTEMPTS}: no store markers in page ({describe_page(html)})")
+                save_debug(html, f"stores-attempt{attempt}.html")
         return 1
     finally:
         try:

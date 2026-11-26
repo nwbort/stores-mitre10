@@ -1,1 +1,1 @@
-playwright
+nodriver>=0.38

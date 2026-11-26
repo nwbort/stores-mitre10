@@ -5,9 +5,11 @@ set -e
 
 echo "Scraping store data from https://www.mitre10.com.au/stores"
 
-# Fetch store data via Playwright (handles session cookies + bot protection).
+# Cloudflare protects this site with a managed challenge, so drive a real
+# Chrome via nodriver to clear it (see scrape.py). xvfb-run gives Chrome a
+# display so it runs headful, which is far less likely to be flagged.
 # Output is a JSON array of store objects from /storelocatorstate/store/offers.
-python3 scrape.py > /tmp/stores_raw.json
+xvfb-run -a python3 scrape.py /tmp/stores_raw.json
 
 # Remove verbose schedule.calendar noise if present (no-op if key is absent).
 jq 'map(if .schedule then .schedule |= del(.calendar) else . end)' /tmp/stores_raw.json > stores.json

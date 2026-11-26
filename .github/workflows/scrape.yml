@@ -71,6 +71,13 @@ jobs:
     - name: Run the scraper
       run: |
         ./scrape.sh
+    - name: Upload debug pages
+      if: failure()
+      uses: actions/upload-artifact@v7
+      with:
+        name: debug-pages
+        path: debug/
+        if-no-files-found: ignore
     - name: Commit and push
       run: |-
         git config user.name "Automated"
